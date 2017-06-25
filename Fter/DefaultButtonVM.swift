@@ -10,6 +10,17 @@ import Foundation
 import UIKit
 
 
+class CircleButton: UIButton{
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        self.layer.cornerRadius = self.frame.size.height/2
+        self.layer.masksToBounds = true
+    }
+
+}
+
+
 protocol BackViewProtocol {
     var backgroundColor: UIColor {get}
     var backgroundImage: UIImage {get}
@@ -103,7 +114,7 @@ class ButtonViewModel:BorderProtocol,TextProtocol,BackViewProtocol{
         self.text = text
         self.borderColor = borderColor.cgColor
         self.borderWidth = borderWidth
-        self.borderRadius = borderRadius + 2.0
+        self.borderRadius = borderRadius
         self.backgroundColor = backgroundColor
         
     }

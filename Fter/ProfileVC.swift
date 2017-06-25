@@ -8,31 +8,39 @@
 
 import UIKit
 
-class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
-
+class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    let imagePicker = UIImagePickerController()
      var menuPickerView = UIPickerView()
     var menuData = ["경영/마케팅","개발","디자인"]
 
+    @IBOutlet weak var profilePhotoButton: UIButton!
     @IBOutlet weak var partTextField: UITextField!
   
     @IBOutlet weak var completeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
       //  self.menuArray ={"경영/마케팅"}
         initialNaViBar()
         initialButton()
         
-      //~~~~~~~~~~
-        let leftImageView = UIImageView()
-        leftImageView.image = UIImage(named: "down")
+        
         
         let leftView = UIView()
-        leftView.addSubview(leftImageView)
+        leftView.frame = CGRect(x:0, y: 0, width:15, height: 40)
+             partTextField.leftViewMode = .always
+        partTextField.leftView = leftView
+      //~~~~~~~~~~
+        let rightImageView = UIImageView()
+        rightImageView.image = UIImage(named: "down")
         
-        leftView.frame = CGRect(x: partTextField.frame.size.width-40, y: 0, width: 40, height: 40)
-        leftImageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        let rightView = UIView()
+        rightView.addSubview(rightImageView)
+        
+        rightView.frame = CGRect(x: partTextField.frame.size.width-40, y: 0, width: 40, height: 40)
+        rightImageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
         partTextField.rightViewMode = .always
-        partTextField.rightView = leftView
+        partTextField.rightView = rightView
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~
         
         
@@ -79,4 +87,30 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
         
     }
 
+    @IBAction func touchUpInsidePhotoButton(_ sender: UIButton) {
+        
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var  chosenImage = UIImage()
+        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+      
+        profilePhotoButton.setImage(chosenImage, for: .normal)
+        profilePhotoButton.imageView?.contentMode = .scaleAspectFill
+        dismiss(animated:true, completion: nil)
+            
+            
+            
+            
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

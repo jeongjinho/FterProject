@@ -8,26 +8,68 @@
 
 import UIKit
 
-class DefaultSegment: UIButton {
+class DefaultSegment: UIView {
     
+    func shadowButtonBar() {
+        
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowRadius = 8.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        
+        
+        let bottomBorderRect = CGRect(x: 0, y: frame.height, width: frame.width, height:2)
+        let bottomBorderView = UIView(frame: bottomBorderRect)
+        bottomBorderView.backgroundColor = UIColor.white
+        addSubview(bottomBorderView)
+        
+        
+    }
+    override func draw(_ rect: CGRect) {
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width:0, height: 2.0)
+        self.layer.shadowRadius = 1
+        self.layer.shadowOpacity = 0.3
+        self.layer.masksToBounds = false
+        
+        let bottomBorderRect = CGRect(x: 0, y: frame.height, width: frame.width, height:2)
+        let bottomBorderView = UIView(frame: bottomBorderRect)
+        bottomBorderView.backgroundColor = UIColor.white
+        addSubview(bottomBorderView)
+    }
     
-    func UnderLineView() {
+   
+}
+
+
+extension UIButton {
+    
+    func underLineView(isSelect:Bool) {
         
         let layer = CALayer()
-        layer.frame = CGRect(x: 0.0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1.0)
+        layer.frame = CGRect(x: 0.0, y: self.frame.size.height, width: self.frame.size.width, height: 4.0)
         
-        layer.backgroundColor = AppColors.PupleColor.cgColor
+        if isSelect == true {
+            layer.backgroundColor = AppColors.PupleColor.cgColor
+            self.setTitleColor(AppColors.PupleColor, for: .normal)
+        } else {
+        
+        layer.backgroundColor = UIColor.white.cgColor
+            self.setTitleColor(AppColors.GrayColor, for: .normal)
+        }
+        
         
         self.layer.addSublayer(layer)
     }
     
     func removeBoarder() {
+        guard let sublayer =  self.layer.sublayers?.last else { return  }
         
-        
-        self.removeFromSuperview()
+        sublayer.removeFromSuperlayer()
         
     }
     
     
-
+    
 }

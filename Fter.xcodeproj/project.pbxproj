@@ -188,9 +188,17 @@
 		7B8170541EFFCC7400489D2C /* MainTimeLine */ = {
 			isa = PBXGroup;
 			children = (
-				7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */,
+				7B81705B1F001C7300489D2C /* VC */,
 			);
 			name = MainTimeLine;
+			sourceTree = "<group>";
+		};
+		7B81705B1F001C7300489D2C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 		7B8C28C21EFEA7C500E5ECF7 = {

@@ -9,27 +9,86 @@
 import UIKit
 
 class MainTimeLineVC: UIViewController {
-    var currentIndex: Int = 0
-    @IBOutlet weak var MenuSegment: UISegmentedControl!
+@IBOutlet weak var menuSegment: DefaultSegment!
     override func viewDidLoad() {
         super.viewDidLoad()
-       MenuSegment.addUnderlineForSelectedSegment()
-        // Do any additional setup after loading the view.
+        
+      
+        
+        
+        
     }
 
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func touchUpInsideFeedButton(_ sender: UIButton) {
+      
+       // var subBtn :UIButton
+        for subView in menuSegment.subviews {
+            
+            if(subView .isKind(of:UIButton.self) == true){
+            
+                let btn = subView as! UIButton
+                 btn.isSelected = false
+                 btn.underLineView(isSelect: false)
+                if(sender.tag == btn.tag){
+                    if(sender.isSelected != true){
+                        
+                        btn.underLineView(isSelect:true)
+                    }
+                    
+                }
+            }
+            
+            
+           
+           
+            
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func touchUpInsideSeg(_ sender: UISegmentedControl) {
-       MenuSegment.removeBorder()
-       MenuSegment.changeUnderlinePosition()
+     //  MenuSegment.removeBorder()
+    //   MenuSegment.changeUnderlinePosition()
        
         
         
     }
     
+    
+
     
 
     /*
