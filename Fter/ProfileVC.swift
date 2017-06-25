@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ProfileVC: UIViewController{
+class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
 
-     var parMenuPickerView = UIPickerView()
+     var menuPickerView = UIPickerView()
+    var menuData = ["경영/마케팅","개발","디자인"]
+
     @IBOutlet weak var partTextField: UITextField!
     @IBOutlet weak var partButton: UIButton!
     @IBOutlet weak var completeButton: UIButton!
@@ -32,6 +34,22 @@ class ProfileVC: UIViewController{
         partTextField.rightViewMode = .always
         partTextField.rightView = leftView
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        
+        
+        menuPickerView.delegate = self
+        menuPickerView.dataSource = self
+        partTextField.inputView = menuPickerView
+        partTextField.inputAccessoryView = CustomPickerView().toolbarForpickerView(vc: self, completeHandler: { () in
+            
+            //추후나감
+            let row = self.menuPickerView.selectedRow(inComponent: 0)
+            self.partTextField.text = self.menuData[row]
+            self.partTextField.endEditing(true)
+            self.partTextField.isEnabled = true
+        })
+            
+            //누르면
+        
     }
     
     func initialButton() {
@@ -46,7 +64,19 @@ class ProfileVC: UIViewController{
         naviBar.shadowNabiBar()
     }
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
-     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return menuData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return menuData[row]
+        
+    }
 
 }
