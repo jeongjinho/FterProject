@@ -13,8 +13,8 @@ import UIKit
  App내에서 공통적으로 자주사용하는 Color를 구조체형식으로 표현
  **/
 struct AppColors {
-    static let GrayColor = UIColor.init(red: 153.0/255.0, green: 153.0/255.0, blue: 153.0/255.0, alpha: 1.0)
-    static let GreenColor = UIColor.init(red: 103.0/255.0, green: 218.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+    static let PupleColor = UIColor.init(red: 137/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+    static let GrayColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
 }
 
 /**

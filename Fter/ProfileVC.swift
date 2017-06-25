@@ -14,7 +14,7 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
     var menuData = ["경영/마케팅","개발","디자인"]
 
     @IBOutlet weak var partTextField: UITextField!
-    @IBOutlet weak var partButton: UIButton!
+  
     @IBOutlet weak var completeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate{
     }
     
     func initialButton() {
-        let btnVM = ButtonViewModel.init(fontColor: UIColor.orange, text: "안녕", borderColor: UIColor.brown, borderWidth: 3, borderRadius:Float(completeButton.frame.height/2), backgroundColor: .white)
+        let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(completeButton.frame.height/2), backgroundColor: .white)
         
         self.completeButton.configureButton(style:.fillStyle, buttonVM: btnVM)
     }

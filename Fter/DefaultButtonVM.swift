@@ -103,7 +103,7 @@ class ButtonViewModel:BorderProtocol,TextProtocol,BackViewProtocol{
         self.text = text
         self.borderColor = borderColor.cgColor
         self.borderWidth = borderWidth
-        self.borderRadius = borderRadius
+        self.borderRadius = borderRadius + 2.0
         self.backgroundColor = backgroundColor
         
     }

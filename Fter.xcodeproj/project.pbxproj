@@ -16,9 +16,13 @@
 		7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */; };
 		7B81704C1EFFB4DA00489D2C /* ProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81704B1EFFB4DA00489D2C /* ProfileUI.swift */; };
 		7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81704D1EFFBA7700489D2C /* Utility.swift */; };
+		7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */; };
+		7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */; };
+		7B8170581EFFEF0100489D2C /* defaultColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170571EFFEF0100489D2C /* defaultColor.swift */; };
+		7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170591EFFF34A00489D2C /* CustomSegment.swift */; };
 		7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */; };
 		7B8C28D41EFEA7C500E5ECF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D21EFEA7C500E5ECF7 /* Main.storyboard */; };
-		7B8C28D61EFEA7C500E5ECF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D51EFEA7C500E5ECF7 /* Assets.xcassets */; };
+		7B8C28D61EFEA7C500E5ECF7 /*  .xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D51EFEA7C500E5ECF7 /*  .xcassets */; };
 		7B8C28D91EFEA7C500E5ECF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D71EFEA7C500E5ECF7 /* LaunchScreen.storyboard */; };
 		7B8C28E41EFEA7C600E5ECF7 /* FterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28E31EFEA7C600E5ECF7 /* FterTests.swift */; };
 		7B8C28EF1EFEA7C600E5ECF7 /* FterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28EE1EFEA7C600E5ECF7 /* FterUITests.swift */; };
@@ -57,10 +61,14 @@
 		7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingCallBack.swift; sourceTree = "<group>"; };
 		7B81704B1EFFB4DA00489D2C /* ProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUI.swift; sourceTree = "<group>"; };
 		7B81704D1EFFBA7700489D2C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimeLineVC.swift; sourceTree = "<group>"; };
+		7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentControllAtt.swift; sourceTree = "<group>"; };
+		7B8170571EFFEF0100489D2C /* defaultColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultColor.swift; sourceTree = "<group>"; };
+		7B8170591EFFF34A00489D2C /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 		7B8C28CB1EFEA7C500E5ECF7 /* Fter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B8C28D31EFEA7C500E5ECF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7B8C28D51EFEA7C500E5ECF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B8C28D51EFEA7C500E5ECF7 /*  .xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = " .xcassets"; sourceTree = "<group>"; };
 		7B8C28D81EFEA7C500E5ECF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B8C28DA1EFEA7C500E5ECF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8C28DF1EFEA7C600E5ECF7 /* FterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */,
+				7B8170591EFFF34A00489D2C /* CustomSegment.swift */,
+				7B8170571EFFEF0100489D2C /* defaultColor.swift */,
 				7B8170421EFFAC5200489D2C /* NavigationAtt.swift */,
 				7B8170401EFFABD700489D2C /* TextFieldAtt.swift */,
+				7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */,
 			);
 			name = DefaultUI;
 			sourceTree = "<group>";
@@ -146,6 +157,40 @@
 				7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */,
 			);
 			name = DefaultNetwork;
+			sourceTree = "<group>";
+		};
+		7B81704F1EFFCC3000489D2C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7B81704D1EFFBA7700489D2C /* Utility.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7B8170501EFFCC4200489D2C /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				7B8C28D21EFEA7C500E5ECF7 /* Main.storyboard */,
+				7B8C28D71EFEA7C500E5ECF7 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		7B8170511EFFCC4B00489D2C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7B8C28D51EFEA7C500E5ECF7 /*  .xcassets */,
+				7B8C28DA1EFEA7C500E5ECF7 /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		7B8170541EFFCC7400489D2C /* MainTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */,
+			);
+			name = MainTimeLine;
 			sourceTree = "<group>";
 		};
 		7B8C28C21EFEA7C500E5ECF7 = {
@@ -173,16 +218,15 @@
 		7B8C28CD1EFEA7C500E5ECF7 /* Fter */ = {
 			isa = PBXGroup;
 			children = (
+				7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */,
+				7B81704F1EFFCC3000489D2C /* Core */,
 				7B81704A1EFFADB100489D2C /* DefaultNetwork */,
 				7B8170471EFFAD9600489D2C /* DefaultUI */,
-				7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */,
-				7B81704D1EFFBA7700489D2C /* Utility.swift */,
 				7B81703D1EFFAA9100489D2C /* Login */,
 				7B8170461EFFACFA00489D2C /* Profile */,
-				7B8C28D21EFEA7C500E5ECF7 /* Main.storyboard */,
-				7B8C28D51EFEA7C500E5ECF7 /* Assets.xcassets */,
-				7B8C28D71EFEA7C500E5ECF7 /* LaunchScreen.storyboard */,
-				7B8C28DA1EFEA7C500E5ECF7 /* Info.plist */,
+				7B8170541EFFCC7400489D2C /* MainTimeLine */,
+				7B8170501EFFCC4200489D2C /* StoryBoard */,
+				7B8170511EFFCC4B00489D2C /* Resource */,
 			);
 			path = Fter;
 			sourceTree = "<group>";
@@ -335,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8C28D91EFEA7C500E5ECF7 /* LaunchScreen.storyboard in Resources */,
-				7B8C28D61EFEA7C500E5ECF7 /* Assets.xcassets in Resources */,
+				7B8C28D61EFEA7C500E5ECF7 /*  .xcassets in Resources */,
 				7B8C28D41EFEA7C500E5ECF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,14 +544,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8170451EFFACF700489D2C /* ProfileVC.swift in Sources */,
+				7B8170581EFFEF0100489D2C /* defaultColor.swift in Sources */,
 				7B81704C1EFFB4DA00489D2C /* ProfileUI.swift in Sources */,
+				7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */,
 				7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */,
 				7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */,
 				7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */,
 				7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */,
+				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
 				7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */,
 				7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */,
+				7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

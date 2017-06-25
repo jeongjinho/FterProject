@@ -16,9 +16,10 @@ class UnderlineTextField: UITextField {
         let layer = CALayer()
         layer.frame = CGRect(x: 0.0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1.0)
 
-       layer.backgroundColor = UIColor.gray.cgColor
+       layer.backgroundColor = AppColors.GrayColor.cgColor
         
         self.layer.addSublayer(layer)
+    
     }
     
     
@@ -26,6 +27,21 @@ class UnderlineTextField: UITextField {
     
 
 }
+
+
+class CircleTextField:UITextField{
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        self.layer.cornerRadius = self.frame.size.height/2
+        self.backgroundColor = AppColors.GrayColor
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 1.0
+    }
+
+}
+
 
 
 
