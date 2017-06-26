@@ -15,6 +15,9 @@ import UIKit
 struct AppColors {
     static let PupleColor = UIColor.init(red: 137/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
     static let GrayColor = UIColor.init(red: 123.0/255.0, green: 123.0/255.0, blue: 123.0/255.0, alpha: 1.0)
+    static let GrayColor2 = UIColor.init(red: 203.0/255.0, green: 203.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+     static let GrayColor3 = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+     static let pinkColor = UIColor.init(red: 237/255.0, green: 59.0/255.0, blue: 162.0/255.0, alpha: 1.0)
 }
 
 /**

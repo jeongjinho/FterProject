@@ -9,6 +9,9 @@ target 'Fter' do
     pod 'AlamofireObjectMapper'
     pod 'SwiftyJSON'
     pod 'Kingfisher'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
   # Pods for Fter
 
   target 'FterTests' do

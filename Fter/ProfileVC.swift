@@ -56,7 +56,7 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
             self.partTextField.isEnabled = true
         })
             
-            //누르면
+            self.partTextField.backgroundColor = AppColors.GrayColor3
         
     }
     

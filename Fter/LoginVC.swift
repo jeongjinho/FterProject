@@ -7,25 +7,22 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
 class LoginVC: UIViewController {
 
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var kakaoButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = true
         initialButton()
         initialNaViBar()
         // Do any additional setup after loading the view.
     }
 
     func initialButton() {
-        
-        let btnVM = ButtonViewModel.init(fontColor: UIColor.orange, text: "안녕", borderColor: UIColor.brown, borderWidth: 3, borderRadius:Float(loginButton.frame.height/2), backgroundColor: .white)
-        
-        self.loginButton.configureButton(style:.fillStyle, buttonVM: btnVM)
-
-    
+        self.kakaoButton.contentMode = .scaleAspectFill
+        self.facebookButton.contentMode = .scaleAspectFill
     }
     
     func initialNaViBar()  {
@@ -50,5 +47,36 @@ class LoginVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func loginFacebook(_ sender: UIButton){
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self) { (result, error) in
+            if (error == nil) {
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    self.getFBUserData()
+                }
+            }
+        }
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    //everything works print the user data
+                    print(result)
+                
+                    let profileVC =  self.storyboard?.instantiateViewController(withIdentifier:"ProfileVC") as! ProfileVC
+                    
+                    
+                    self.navigationController?.pushViewController(profileVC, animated: true)
+                    
+                }
+            })
+            
+        
+        }
+    }
 
 }

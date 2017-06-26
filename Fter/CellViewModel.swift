@@ -30,21 +30,21 @@ extension TextForCellProtocol{
     }
 }
 
-struct LabelViewModel:TextForCellProtocol {
- 
-    var title: String
-    
-    
-    init?(datas inData:SchoolData) {
-        
-       guard let titleString =  inData.schoolName else { return nil }
-        self.title = titleString
-        
-    }
-    
-   
-    
-}
+//struct LabelViewModel:TextForCellProtocol {
+// 
+//    var title: String
+//    
+//    
+//    init?(datas inData:SchoolData) {
+//        
+//       guard let titleString =  inData.schoolName else { return nil }
+//        self.title = titleString
+//        
+//    }
+//    
+//   
+//    
+//}
 
 struct  SubLabelViewModel:TextForCellProtocol {
     var title: String
@@ -52,14 +52,14 @@ struct  SubLabelViewModel:TextForCellProtocol {
     
         return .black
     }
-    init?(SubDatas inData:DepartMent) {
-        guard let titleString =  inData.departMentName else { return nil }
-        print("\(titleString)")
-        self.title = titleString
-        
-        }
-    
-    
+//    init?(SubDatas inData:DepartMent) {
+//        guard let titleString =  inData.departMentName else { return nil }
+//        print("\(titleString)")
+//        self.title = titleString
+//        
+//        }
+//    
+//    
     }
 
 
@@ -99,11 +99,11 @@ struct ImageViewModel:ImageForCellProtocol {
     var image: UIImage
 
     
-    init?(datas inData: SchoolData) {
-        
-        guard let schoolImageString = inData.schoolImageName else { return nil }
-        self.image = UIImage(named:schoolImageString)!
-    }
+//    init?(datas inData: SchoolData) {
+//        
+//        guard let schoolImageString = inData.schoolImageName else { return nil }
+//        self.image = UIImage(named:schoolImageString)!
+//    }
 }
 
 extension UIImageView{
