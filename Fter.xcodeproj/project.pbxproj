@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		05492C88235518462169ED2D /* Pods_FterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15CDAF48A0877F620C68626 /* Pods_FterUITests.framework */; };
+		7B5B57F91F00A32500944004 /* TimeLineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */; };
+		7B5B57FD1F00A46A00944004 /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */; };
+		7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57FE1F00A82800944004 /* CellViewModel.swift */; };
+		7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B58021F00A92600944004 /* TimeLineVO.swift */; };
+		7B5B58051F00AB6100944004 /* PagingCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */; };
 		7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81703B1EFFAA5A00489D2C /* LoginVC.swift */; };
 		7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */; };
 		7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170401EFFABD700489D2C /* TextFieldAtt.swift */; };
@@ -18,7 +23,6 @@
 		7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81704D1EFFBA7700489D2C /* Utility.swift */; };
 		7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */; };
 		7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */; };
-		7B8170581EFFEF0100489D2C /* defaultColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170571EFFEF0100489D2C /* defaultColor.swift */; };
 		7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170591EFFF34A00489D2C /* CustomSegment.swift */; };
 		7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */; };
 		7B8C28D41EFEA7C500E5ECF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D21EFEA7C500E5ECF7 /* Main.storyboard */; };
@@ -53,6 +57,11 @@
 		25ECF8B2909D55B1DF23FFEE /* Pods-Fter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.debug.xcconfig"; sourceTree = "<group>"; };
 		481C31C90A86B261F69720A3 /* Pods-Fter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.release.xcconfig"; sourceTree = "<group>"; };
 		65248DA28E1AB714F7EA3AF4 /* Pods-FterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FterUITests/Pods-FterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineDelegate.swift; sourceTree = "<group>"; };
+		7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
+		7B5B57FE1F00A82800944004 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		7B5B58021F00A92600944004 /* TimeLineVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVO.swift; sourceTree = "<group>"; };
+		7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionVM.swift; sourceTree = "<group>"; };
 		7B81703B1EFFAA5A00489D2C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButtonVM.swift; sourceTree = "<group>"; };
 		7B8170401EFFABD700489D2C /* TextFieldAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAtt.swift; sourceTree = "<group>"; };
@@ -63,7 +72,6 @@
 		7B81704D1EFFBA7700489D2C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimeLineVC.swift; sourceTree = "<group>"; };
 		7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentControllAtt.swift; sourceTree = "<group>"; };
-		7B8170571EFFEF0100489D2C /* defaultColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultColor.swift; sourceTree = "<group>"; };
 		7B8170591EFFF34A00489D2C /* CustomSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 		7B8C28CB1EFEA7C500E5ECF7 /* Fter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +129,109 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7B5B57EC1F009C2B00944004 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */,
+			);
+			name = Segment;
+			sourceTree = "<group>";
+		};
+		7B5B57ED1F009C3E00944004 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170401EFFABD700489D2C /* TextFieldAtt.swift */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		7B5B57EE1F009C4600944004 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170421EFFAC5200489D2C /* NavigationAtt.swift */,
+			);
+			name = NavigationBar;
+			sourceTree = "<group>";
+		};
+		7B5B57EF1F009C5700944004 /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				7B8170591EFFF34A00489D2C /* CustomSegment.swift */,
+			);
+			name = SegmentControl;
+			sourceTree = "<group>";
+		};
+		7B5B57F01F009C6600944004 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		7B5B57F11F009C6F00944004 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B57F01F009C6600944004 /* Button */,
+				7B5B57EF1F009C5700944004 /* SegmentControl */,
+				7B5B57EE1F009C4600944004 /* NavigationBar */,
+				7B5B57ED1F009C3E00944004 /* TextField */,
+				7B5B57EC1F009C2B00944004 /* Segment */,
+			);
+			name = UIComponent;
+			sourceTree = "<group>";
+		};
+		7B5B57FA1F00A32C00944004 /* TimeLineVM */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B58061F00AB6E00944004 /* PagingCollection */,
+				7B5B57FB1F00A33200944004 /* TimeLine */,
+			);
+			name = TimeLineVM;
+			sourceTree = "<group>";
+		};
+		7B5B57FB1F00A33200944004 /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B58011F00A91000944004 /* VO */,
+				7B5B58071F00ABC800944004 /* VM */,
+			);
+			name = TimeLine;
+			sourceTree = "<group>";
+		};
+		7B5B58001F00A82D00944004 /* CellVM */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B57FE1F00A82800944004 /* CellViewModel.swift */,
+			);
+			name = CellVM;
+			sourceTree = "<group>";
+		};
+		7B5B58011F00A91000944004 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B58021F00A92600944004 /* TimeLineVO.swift */,
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
+		7B5B58061F00AB6E00944004 /* PagingCollection */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */,
+			);
+			name = PagingCollection;
+			sourceTree = "<group>";
+		};
+		7B5B58071F00ABC800944004 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */,
+				7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */,
+			);
+			name = VM;
+			sourceTree = "<group>";
+		};
 		7B81703D1EFFAA9100489D2C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,12 +252,8 @@
 		7B8170471EFFAD9600489D2C /* DefaultUI */ = {
 			isa = PBXGroup;
 			children = (
-				7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */,
-				7B8170591EFFF34A00489D2C /* CustomSegment.swift */,
-				7B8170571EFFEF0100489D2C /* defaultColor.swift */,
-				7B8170421EFFAC5200489D2C /* NavigationAtt.swift */,
-				7B8170401EFFABD700489D2C /* TextFieldAtt.swift */,
-				7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */,
+				7B5B58001F00A82D00944004 /* CellVM */,
+				7B5B57F11F009C6F00944004 /* UIComponent */,
 			);
 			name = DefaultUI;
 			sourceTree = "<group>";
@@ -189,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				7B81705B1F001C7300489D2C /* VC */,
+				7B5B57FA1F00A32C00944004 /* TimeLineVM */,
 			);
 			name = MainTimeLine;
 			sourceTree = "<group>";
@@ -552,15 +660,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8170451EFFACF700489D2C /* ProfileVC.swift in Sources */,
-				7B8170581EFFEF0100489D2C /* defaultColor.swift in Sources */,
 				7B81704C1EFFB4DA00489D2C /* ProfileUI.swift in Sources */,
+				7B5B58051F00AB6100944004 /* PagingCollectionVM.swift in Sources */,
 				7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */,
 				7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */,
 				7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */,
 				7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */,
+				7B5B57FD1F00A46A00944004 /* TimeLineCell.swift in Sources */,
+				7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */,
 				7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */,
 				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
+				7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */,
+				7B5B57F91F00A32500944004 /* TimeLineDelegate.swift in Sources */,
 				7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */,
 				7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */,
 				7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */,

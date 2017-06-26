@@ -9,6 +9,9 @@
 import UIKit
 
 class MainTimeLineVC: UIViewController {
+   
+    @IBOutlet weak var timeLineTableView: UITableView!
+    @IBOutlet weak var pagingCollectionView: UICollectionView!
 @IBOutlet weak var menuSegment: DefaultSegment!
     override func viewDidLoad() {
         super.viewDidLoad()
