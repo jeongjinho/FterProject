@@ -10,11 +10,20 @@ import Foundation
 import UIKit
 
 
+protocol ButtonForCellProtocol {
+    
+    
+    var selectImage: String {get}
+    var nonSelectImage: String {get}
+    
+}
+
 protocol TextForCellProtocol {
     
     
     var title: String {get}
     var textColor: UIColor {get}
+    var textFontStyle: UIFont {get}
     
 }
 extension TextForCellProtocol{
@@ -22,29 +31,20 @@ extension TextForCellProtocol{
     
         return ""
     }
+    var textFontStyle: UIFont {
+    
+    
+        return UIFont(name:"HelveticaNeue-Regular", size: 12.0)!
+    
+    }
     
     
     var textColor : UIColor {
     
-        return UIColor(colorLiteralRed:255, green:255, blue:255, alpha: 1)
+        return UIColor(colorLiteralRed:0, green:0, blue:0, alpha: 1)
     }
 }
 
-//struct LabelViewModel:TextForCellProtocol {
-// 
-//    var title: String
-//    
-//    
-//    init?(datas inData:SchoolData) {
-//        
-//       guard let titleString =  inData.schoolName else { return nil }
-//        self.title = titleString
-//        
-//    }
-//    
-//   
-//    
-//}
 
 struct  SubLabelViewModel:TextForCellProtocol {
     var title: String
@@ -65,17 +65,6 @@ struct  SubLabelViewModel:TextForCellProtocol {
 
 
 
-extension UILabel{
-    func configureLabel(_ viewModel: TextForCellProtocol) {
-      
-        self.text = viewModel.title
-          print("\(self.text)")
-        self.textColor = viewModel.textColor
-        
-    }
-
-}
-
 
 protocol ImageForCellProtocol {
     
@@ -93,6 +82,12 @@ extension ImageForCellProtocol{
         
         return  UIImage(named:"default")!
     }
+    
+    var radious: CGFloat{
+    
+    
+    return 0
+    }
 }
 
 struct ImageViewModel:ImageForCellProtocol {
@@ -104,13 +99,4 @@ struct ImageViewModel:ImageForCellProtocol {
 //        guard let schoolImageString = inData.schoolImageName else { return nil }
 //        self.image = UIImage(named:schoolImageString)!
 //    }
-}
-
-extension UIImageView{
-
-    func configureUpperBackImage(_ viewModel: ImageForCellProtocol){
-        
-      self.image = viewModel.image
-    }
-    
 }

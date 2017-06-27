@@ -11,77 +11,51 @@ import ObjectMapper
 
 
 
-class PostPhoto : Mappable{
+
+public class TimeLine:NSObject {
     
-    var url : Int?
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
+    var replies: [Reply]?
+    var replyNumber: Int?
+    var likeNumber: Int?
+    var postText: String?
+    var writtenDate: String?
+    var writerName: String?
+    var writerLevel: Int?
+    var postTitle: String?
+    var writerImage: String?
+    init(sreplies:[Reply]?,sreplyNumber:Int,slikeNumber:Int,spostText:String,swrittenDate:String,swriterName:String,swriterLevel:Int,spostTitle:String,swriterImage:String) {
         
-        url <- map["id"]
-        
-        
+        replies = sreplies
+        replyNumber = sreplyNumber
+        likeNumber = slikeNumber
+        postText  = spostText
+        writtenDate = swrittenDate
+        writerName = swriterName
+        writerLevel = swriterLevel
+        postTitle = spostTitle
+        writerImage = swriterImage
     }
     
 }
 
-class ReplyPerson : Mappable{
-    var profilePhoto : String?
-    var personName : String?
-    var reply : String?
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        
-      //  url <- map["id"]
-        
-        
-    }
-    
-}
+public class AdverTising: NSObject{
 
+    var advertisingPhotos:[AdverTisingPhoto]?
 
-
-
-class Content : Mappable{
-    
-    var phothos: [PostPhoto]?
-    var replyPersons: [ReplyPerson]?
-//    var id : Int?
-//    var username : String?
-//    var title : String?
-//    var message : String?
-    //   var posted_time : String?
-    //  var view_number : Int?
-    //  var image : String?
-//    var content : String?
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        
-//        id <- map["id"]
-//        username <- map["username"]
-//        title <- map["title"]
-        // posted_time <- map["posted_time"]
-        //  view_number <- map["view_number"]
-        //  image <- map["image"]
-       // content <- map["content"]
-        
-    }
-    
-}
-
-class TimeLine : Mappable{
-    
-    var TimeLines : [Content]?
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        TimeLines <- map["results"]
+    init(photos:[AdverTisingPhoto]?) {
+        advertisingPhotos = photos
     }
 }
+
+ class AdverTisingPhoto: NSObject{
+    
+    var adPhotoName:String?
+    
+    init(photos:String) {
+        adPhotoName = photos
+    }
+}
+
 
 
 

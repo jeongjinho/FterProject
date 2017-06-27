@@ -22,9 +22,6 @@ class UnderlineTextField: UITextField {
     
     }
     
-    
-    
-    
 
 }
 
@@ -45,37 +42,32 @@ class CircleTextField:UITextField{
 
 
 
-extension UITextField
-{
-    enum Direction
-    {
-        case Left
-        case Right
+
+class DropBoxTextField:UITextField{
+
+    
+    override func draw(_ rect: CGRect) {
+        super.drawText(in: rect)
+        let leftView = UIView()
+        leftView.frame = CGRect(x:0, y: 0, width:15, height: 40)
+        self.leftViewMode = .always
+        self.leftView = leftView
+        //~~~~~~~~~~
+        let rightImageView = UIImageView()
+        rightImageView.image = UIImage(named: "down")
+        
+        let rightView = UIView()
+        rightView.addSubview(rightImageView)
+        
+        rightView.frame = CGRect(x: self.frame.size.width-40, y: 0, width: 40, height: 40)
+        rightImageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        self.rightViewMode = .always
+        self.rightView = rightView
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        
     }
     
-    func AddImage(direction:Direction,imageName:String,backgroundColor:UIColor)
-    {
-        
-        let fm = CGRect(x:0, y:0, width:60, height:self.frame.size.height)
-        
-        let View = UIView(frame: fm)
-        View.backgroundColor = backgroundColor
-        
-        let imageView = UIImageView(frame: fm)
-        imageView.image = UIImage(named: imageName)
-        
-        View.addSubview(imageView)
-        
-        if Direction.Left == direction
-        {
-            self.leftViewMode = .always
-            self.leftView = View
-        }
-        else
-        {
-            self.rightViewMode = .always
-            self.rightView = View
-        }
-    }
-    
+
 }
+

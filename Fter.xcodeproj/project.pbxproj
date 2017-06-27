@@ -8,18 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		05492C88235518462169ED2D /* Pods_FterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15CDAF48A0877F620C68626 /* Pods_FterUITests.framework */; };
-		7B5B57F91F00A32500944004 /* TimeLineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */; };
-		7B5B57FD1F00A46A00944004 /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */; };
 		7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57FE1F00A82800944004 /* CellViewModel.swift */; };
 		7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B58021F00A92600944004 /* TimeLineVO.swift */; };
-		7B5B58051F00AB6100944004 /* PagingCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */; };
+		7B61DC9A1F015438007C7E55 /* CustomTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */; };
+		7B61DC9B1F015438007C7E55 /* CustomTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */; };
+		7B61DC9E1F016552007C7E55 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DC9C1F016552007C7E55 /* ReplyCell.swift */; };
+		7B61DC9F1F016552007C7E55 /* ReplyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DC9D1F016552007C7E55 /* ReplyCell.xib */; };
+		7B61DCA41F016ECD007C7E55 /* ReplyVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */; };
+		7B61DCA61F0173AE007C7E55 /* ReplyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */; };
+		7B61DCA81F017E66007C7E55 /* TimeLineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */; };
+		7B61DCAB1F01F508007C7E55 /* TimeLineExteion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */; };
+		7B61DCAD1F022DBE007C7E55 /* AdevertisingDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */; };
+		7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */; };
+		7B61DCB11F0230ED007C7E55 /* AdverTisingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */; };
+		7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */; };
+		7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */; };
+		7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B49F1F00FA840041156E /* NetworkModel.swift */; };
+		7B63B4A31F00FB4E0041156E /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */; };
+		7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A71F0106C80041156E /* PostingVC.swift */; };
 		7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81703B1EFFAA5A00489D2C /* LoginVC.swift */; };
 		7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */; };
 		7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170401EFFABD700489D2C /* TextFieldAtt.swift */; };
 		7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170421EFFAC5200489D2C /* NavigationAtt.swift */; };
 		7B8170451EFFACF700489D2C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170441EFFACF700489D2C /* ProfileVC.swift */; };
 		7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */; };
-		7B81704C1EFFB4DA00489D2C /* ProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81704B1EFFB4DA00489D2C /* ProfileUI.swift */; };
 		7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B81704D1EFFBA7700489D2C /* Utility.swift */; };
 		7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */; };
 		7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */; };
@@ -57,18 +69,30 @@
 		25ECF8B2909D55B1DF23FFEE /* Pods-Fter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.debug.xcconfig"; sourceTree = "<group>"; };
 		481C31C90A86B261F69720A3 /* Pods-Fter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.release.xcconfig"; sourceTree = "<group>"; };
 		65248DA28E1AB714F7EA3AF4 /* Pods-FterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FterUITests/Pods-FterUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineDelegate.swift; sourceTree = "<group>"; };
-		7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
 		7B5B57FE1F00A82800944004 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		7B5B58021F00A92600944004 /* TimeLineVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVO.swift; sourceTree = "<group>"; };
-		7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingCollectionVM.swift; sourceTree = "<group>"; };
+		7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeLineCell.swift; sourceTree = "<group>"; };
+		7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimeLineCell.xib; sourceTree = "<group>"; };
+		7B61DC9C1F016552007C7E55 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		7B61DC9D1F016552007C7E55 /* ReplyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyCell.xib; sourceTree = "<group>"; };
+		7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyVO.swift; sourceTree = "<group>"; };
+		7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyVM.swift; sourceTree = "<group>"; };
+		7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVM.swift; sourceTree = "<group>"; };
+		7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineExteion.swift; sourceTree = "<group>"; };
+		7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdevertisingDatasource.swift; sourceTree = "<group>"; };
+		7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdverTisingCell.swift; sourceTree = "<group>"; };
+		7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdverTisingCell.xib; sourceTree = "<group>"; };
+		7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingVM.swift; sourceTree = "<group>"; };
+		7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingFlowLayoutDelegate.swift; sourceTree = "<group>"; };
+		7B63B49F1F00FA840041156E /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
+		7B63B4A71F0106C80041156E /* PostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingVC.swift; sourceTree = "<group>"; };
 		7B81703B1EFFAA5A00489D2C /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7B81703E1EFFAAB800489D2C /* DefaultButtonVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultButtonVM.swift; sourceTree = "<group>"; };
 		7B8170401EFFABD700489D2C /* TextFieldAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldAtt.swift; sourceTree = "<group>"; };
 		7B8170421EFFAC5200489D2C /* NavigationAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAtt.swift; sourceTree = "<group>"; };
 		7B8170441EFFACF700489D2C /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingCallBack.swift; sourceTree = "<group>"; };
-		7B81704B1EFFB4DA00489D2C /* ProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileUI.swift; sourceTree = "<group>"; };
 		7B81704D1EFFBA7700489D2C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		7B8170521EFFCC7000489D2C /* MainTimeLineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimeLineVC.swift; sourceTree = "<group>"; };
 		7B8170551EFFCDEC00489D2C /* SegmentControllAtt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentControllAtt.swift; sourceTree = "<group>"; };
@@ -172,6 +196,7 @@
 		7B5B57F11F009C6F00944004 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				7B61DCA91F01867A007C7E55 /* Cell */,
 				7B5B57F01F009C6600944004 /* Button */,
 				7B5B57EF1F009C5700944004 /* SegmentControl */,
 				7B5B57EE1F009C4600944004 /* NavigationBar */,
@@ -184,19 +209,11 @@
 		7B5B57FA1F00A32C00944004 /* TimeLineVM */ = {
 			isa = PBXGroup;
 			children = (
-				7B5B58061F00AB6E00944004 /* PagingCollection */,
-				7B5B57FB1F00A33200944004 /* TimeLine */,
-			);
-			name = TimeLineVM;
-			sourceTree = "<group>";
-		};
-		7B5B57FB1F00A33200944004 /* TimeLine */ = {
-			isa = PBXGroup;
-			children = (
 				7B5B58011F00A91000944004 /* VO */,
+				7B5B58021F00A92600944004 /* TimeLineVO.swift */,
 				7B5B58071F00ABC800944004 /* VM */,
 			);
-			name = TimeLine;
+			name = TimeLineVM;
 			sourceTree = "<group>";
 		};
 		7B5B58001F00A82D00944004 /* CellVM */ = {
@@ -210,26 +227,67 @@
 		7B5B58011F00A91000944004 /* VO */ = {
 			isa = PBXGroup;
 			children = (
-				7B5B58021F00A92600944004 /* TimeLineVO.swift */,
 			);
 			name = VO;
-			sourceTree = "<group>";
-		};
-		7B5B58061F00AB6E00944004 /* PagingCollection */ = {
-			isa = PBXGroup;
-			children = (
-				7B5B58041F00AB6100944004 /* PagingCollectionVM.swift */,
-			);
-			name = PagingCollection;
 			sourceTree = "<group>";
 		};
 		7B5B58071F00ABC800944004 /* VM */ = {
 			isa = PBXGroup;
 			children = (
-				7B5B57F81F00A32500944004 /* TimeLineDelegate.swift */,
-				7B5B57FC1F00A46A00944004 /* TimeLineCell.swift */,
+				7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */,
+				7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */,
 			);
 			name = VM;
+			sourceTree = "<group>";
+		};
+		7B61DC971F01434B007C7E55 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
+		7B61DCA01F016C9C007C7E55 /* TImeLineCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */,
+				7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */,
+				7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */,
+				7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */,
+			);
+			name = TImeLineCell;
+			sourceTree = "<group>";
+		};
+		7B61DCA11F016E7D007C7E55 /* ReplyCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B61DC9C1F016552007C7E55 /* ReplyCell.swift */,
+				7B61DC9D1F016552007C7E55 /* ReplyCell.xib */,
+				7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */,
+				7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */,
+			);
+			name = ReplyCell;
+			sourceTree = "<group>";
+		};
+		7B61DCA91F01867A007C7E55 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B5B58001F00A82D00944004 /* CellVM */,
+				7B61DCA11F016E7D007C7E55 /* ReplyCell */,
+				7B61DCA01F016C9C007C7E55 /* TImeLineCell */,
+				7B61DCB21F0230F1007C7E55 /* AdvertisingCell */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		7B61DCB21F0230F1007C7E55 /* AdvertisingCell */ = {
+			isa = PBXGroup;
+			children = (
+				7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */,
+				7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */,
+				7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */,
+			);
+			name = AdvertisingCell;
 			sourceTree = "<group>";
 		};
 		7B63B49E1F00F87B0041156E /* VC */ = {
@@ -238,6 +296,22 @@
 				7B8170441EFFACF700489D2C /* ProfileVC.swift */,
 			);
 			name = VC;
+			sourceTree = "<group>";
+		};
+		7B63B4A11F00FB260041156E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		7B63B4A61F0106A20041156E /* Posting */ = {
+			isa = PBXGroup;
+			children = (
+				7B63B4A71F0106C80041156E /* PostingVC.swift */,
+			);
+			name = Posting;
 			sourceTree = "<group>";
 		};
 		7B81703D1EFFAA9100489D2C /* Login */ = {
@@ -251,8 +325,9 @@
 		7B8170461EFFACFA00489D2C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7B61DC971F01434B007C7E55 /* VO */,
+				7B63B4A11F00FB260041156E /* Network */,
 				7B63B49E1F00F87B0041156E /* VC */,
-				7B81704B1EFFB4DA00489D2C /* ProfileUI.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -260,7 +335,6 @@
 		7B8170471EFFAD9600489D2C /* DefaultUI */ = {
 			isa = PBXGroup;
 			children = (
-				7B5B58001F00A82D00944004 /* CellVM */,
 				7B5B57F11F009C6F00944004 /* UIComponent */,
 			);
 			name = DefaultUI;
@@ -270,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8170481EFFADAE00489D2C /* NetworkingCallBack.swift */,
+				7B63B49F1F00FA840041156E /* NetworkModel.swift */,
 			);
 			name = DefaultNetwork;
 			sourceTree = "<group>";
@@ -349,6 +424,7 @@
 				7B81703D1EFFAA9100489D2C /* Login */,
 				7B8170461EFFACFA00489D2C /* Profile */,
 				7B8170541EFFCC7400489D2C /* MainTimeLine */,
+				7B63B4A61F0106A20041156E /* Posting */,
 				7B8170501EFFCC4200489D2C /* StoryBoard */,
 				7B8170511EFFCC4B00489D2C /* Resource */,
 			);
@@ -504,7 +580,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8C28D91EFEA7C500E5ECF7 /* LaunchScreen.storyboard in Resources */,
+				7B61DC9B1F015438007C7E55 /* CustomTimeLineCell.xib in Resources */,
 				7B8C28D61EFEA7C500E5ECF7 /*  .xcassets in Resources */,
+				7B61DC9F1F016552007C7E55 /* ReplyCell.xib in Resources */,
+				7B61DCB11F0230ED007C7E55 /* AdverTisingCell.xib in Resources */,
 				7B8C28D41EFEA7C500E5ECF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,19 +748,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8170451EFFACF700489D2C /* ProfileVC.swift in Sources */,
-				7B81704C1EFFB4DA00489D2C /* ProfileUI.swift in Sources */,
-				7B5B58051F00AB6100944004 /* PagingCollectionVM.swift in Sources */,
+				7B61DC9A1F015438007C7E55 /* CustomTimeLineCell.swift in Sources */,
+				7B63B4A31F00FB4E0041156E /* NetworkingModel.swift in Sources */,
 				7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */,
+				7B61DCA81F017E66007C7E55 /* TimeLineVM.swift in Sources */,
 				7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */,
 				7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */,
+				7B61DCA41F016ECD007C7E55 /* ReplyVO.swift in Sources */,
+				7B61DCAD1F022DBE007C7E55 /* AdevertisingDatasource.swift in Sources */,
 				7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */,
-				7B5B57FD1F00A46A00944004 /* TimeLineCell.swift in Sources */,
 				7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */,
+				7B61DCAB1F01F508007C7E55 /* TimeLineExteion.swift in Sources */,
 				7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */,
+				7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */,
+				7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */,
+				7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */,
 				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
+				7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */,
+				7B61DC9E1F016552007C7E55 /* ReplyCell.swift in Sources */,
+				7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */,
 				7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */,
-				7B5B57F91F00A32500944004 /* TimeLineDelegate.swift in Sources */,
+				7B61DCA61F0173AE007C7E55 /* ReplyVM.swift in Sources */,
 				7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */,
 				7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */,
 				7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */,
