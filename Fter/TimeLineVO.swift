@@ -38,14 +38,6 @@ public class TimeLine:NSObject {
     
 }
 
-public class AdverTising: NSObject{
-
-    var advertisingPhotos:[AdverTisingPhoto]?
-
-    init(photos:[AdverTisingPhoto]?) {
-        advertisingPhotos = photos
-    }
-}
 
  class AdverTisingPhoto: NSObject{
     

@@ -18,22 +18,24 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.delegate = self;
         self.timeLineTableView.delegate = self;
         self.timeLineTableView.dataSource = self;
         
       initialData()
-      let adDelegate = AdvertisingDelegate.init(sc:self, data:photoData! as! [AdverTisingPhoto])
-        advertisingCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
-
+       adDelegate = AdvertisingDelegate.init(sc:self, data:photoData! as! [AdverTisingPhoto])
+        
+        self.advertisingCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
         self.advertisingCollectionView.dataSource = adDelegate
        self.advertisingCollectionView.delegate = adDelegate
         
         
     }
-
+    
     func initialData()  {
         
+       
         let one = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요", sreplyerName:"홍주영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile2")], sreplyNumber:2, slikeNumber: 5, spostText:"dsdsdsdsdsdsd", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle: "니모를찾아서", swriterImage:"dummyProfile")
         
         let two = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요", sreplyerName:"홍주영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"dsdsdsdsdsdsd", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile")
@@ -41,7 +43,7 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
         
         self.dummy = [one,two]
         
-        self.photoData = [AdverTisingPhoto.init(photos:"1"),AdverTisingPhoto.init(photos:"2"),AdverTisingPhoto.init(photos:"3"),AdverTisingPhoto.init(photos:"4"),AdverTisingPhoto.init(photos:"5")]
+        self.photoData = [AdverTisingPhoto.init(photos:"1"),AdverTisingPhoto.init(photos:"2"),AdverTisingPhoto.init(photos:"3"),AdverTisingPhoto.init(photos:"4"),AdverTisingPhoto.init(photos:"5"),AdverTisingPhoto.init(photos:"6")]
     }
   
     //------------------------------
@@ -73,7 +75,7 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     
     
     
-    
+   
     
     
     
@@ -134,11 +136,12 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     
     
     
-    
-    
-    
-    
-    
+    @IBAction func touchUpInsideMapButton(_ sender: UIButton) {
+        
+        let mapVC = self.storyboard?.instantiateViewController(withIdentifier:"MapVC") as! MapVC
+        
+        self.navigationController?.pushViewController(mapVC, animated:true)
+    }
     
     @IBAction func touchUpInsideFeedButton(_ sender: UIButton) {
       
@@ -166,18 +169,7 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
         }
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func touchUpInsideSeg(_ sender: UISegmentedControl) {
-     //  MenuSegment.removeBorder()
-    //   MenuSegment.changeUnderlinePosition()
-       
-        
-        
-    }
     
     
 

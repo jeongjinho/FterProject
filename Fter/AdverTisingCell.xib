@@ -21,13 +21,21 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbs-l4-Uzj">
                         <rect key="frame" x="0.0" y="0.0" width="189" height="182"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-VW-N5p">
+                        <rect key="frame" x="0.0" y="0.0" width="189" height="182"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="zg7-VW-N5p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3wj-V9-JA5"/>
+                <constraint firstAttribute="bottom" secondItem="zg7-VW-N5p" secondAttribute="bottom" id="90g-wd-au7"/>
+                <constraint firstItem="zg7-VW-N5p" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9it-3w-ysL"/>
                 <constraint firstAttribute="trailing" secondItem="Qbs-l4-Uzj" secondAttribute="trailing" id="9k8-nO-9sJ"/>
                 <constraint firstItem="Qbs-l4-Uzj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="B8y-LM-ga6"/>
                 <constraint firstItem="Qbs-l4-Uzj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JWj-0v-MYh"/>
                 <constraint firstAttribute="bottom" secondItem="Qbs-l4-Uzj" secondAttribute="bottom" id="NEb-sP-onF"/>
+                <constraint firstAttribute="trailing" secondItem="zg7-VW-N5p" secondAttribute="trailing" id="dzU-oM-kc8"/>
             </constraints>
             <size key="customSize" width="189" height="182"/>
             <connections>

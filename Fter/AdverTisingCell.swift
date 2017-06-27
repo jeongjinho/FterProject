@@ -16,7 +16,7 @@ class AdverTisingCell: UICollectionViewCell {
 
     
     func configure(_ model:AdverTisingPhoto) {
-        
+      
         self.photos = model
         configurePhotoImage()
     }

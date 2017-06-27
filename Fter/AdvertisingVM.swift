@@ -21,6 +21,7 @@ struct AdImageViewModel:ImageForCellProtocol {
             
             guard let imageString =  indata.adPhotoName else { return nil }
             //킹피숴 대체해야함
+            print(imageString)
             self.image = UIImage(named:imageString)!
         
             

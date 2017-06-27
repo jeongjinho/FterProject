@@ -23,6 +23,8 @@
 		7B61DCB11F0230ED007C7E55 /* AdverTisingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */; };
 		7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */; };
 		7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */; };
+		7B61DCBA1F02713D007C7E55 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB91F02713D007C7E55 /* MapVC.swift */; };
+		7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCBC1F027301007C7E55 /* FterNavigation.swift */; };
 		7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B49F1F00FA840041156E /* NetworkModel.swift */; };
 		7B63B4A31F00FB4E0041156E /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */; };
 		7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A71F0106C80041156E /* PostingVC.swift */; };
@@ -84,6 +86,8 @@
 		7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdverTisingCell.xib; sourceTree = "<group>"; };
 		7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingVM.swift; sourceTree = "<group>"; };
 		7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingFlowLayoutDelegate.swift; sourceTree = "<group>"; };
+		7B61DCB91F02713D007C7E55 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		7B61DCBC1F027301007C7E55 /* FterNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FterNavigation.swift; sourceTree = "<group>"; };
 		7B63B49F1F00FA840041156E /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
 		7B63B4A71F0106C80041156E /* PostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingVC.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8170421EFFAC5200489D2C /* NavigationAtt.swift */,
+				7B61DCBC1F027301007C7E55 /* FterNavigation.swift */,
 			);
 			name = NavigationBar;
 			sourceTree = "<group>";
@@ -288,6 +293,14 @@
 				7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */,
 			);
 			name = AdvertisingCell;
+			sourceTree = "<group>";
+		};
+		7B61DCBB1F02714E007C7E55 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7B61DCB91F02713D007C7E55 /* MapVC.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		7B63B49E1F00F87B0041156E /* VC */ = {
@@ -425,6 +438,7 @@
 				7B8170461EFFACFA00489D2C /* Profile */,
 				7B8170541EFFCC7400489D2C /* MainTimeLine */,
 				7B63B4A61F0106A20041156E /* Posting */,
+				7B61DCBB1F02714E007C7E55 /* Map */,
 				7B8170501EFFCC4200489D2C /* StoryBoard */,
 				7B8170511EFFCC4B00489D2C /* Resource */,
 			);
@@ -763,9 +777,11 @@
 				7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */,
 				7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */,
 				7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */,
+				7B61DCBA1F02713D007C7E55 /* MapVC.swift in Sources */,
 				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
 				7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */,
+				7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */,
 				7B61DC9E1F016552007C7E55 /* ReplyCell.swift in Sources */,
 				7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */,
 				7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */,

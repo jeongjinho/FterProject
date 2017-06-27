@@ -60,6 +60,15 @@ extension UIButton{
         self.setTitleColor(viewModel.textColor, for: .normal)
         
     }
+    func configureAdButton(_ viewModel: ImageForCellProtocol) {
+        
+        //self.titleLabel?.text = viewModel.title
+        // print("\(self.text)")
+       // self.setTitleColor(viewModel.textColor, for: .normal)
+        
+
+        self.setImage(viewModel.image, for:.normal)
+    }
     
 }
 

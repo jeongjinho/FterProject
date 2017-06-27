@@ -9,15 +9,19 @@
 import Foundation
 import UIKit
 
-//extension AdvertisingDelegate: UICollectionViewDelegateFlowLayout{
-//
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        
-//        return CGSize(width:collectionView.frame.size.width/5, height:collectionView.frame.size.height/5)
-//    }
-//    
-//    
-//
-//}
+extension AdvertisingDelegate: UICollectionViewDelegateFlowLayout{
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        return CGSize(width:collectionView.frame.size.width, height:collectionView.frame.size.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    
+    
+}
