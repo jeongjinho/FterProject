@@ -10,6 +10,9 @@ import UIKit
 
 class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDelegate {
 
+    @IBOutlet weak var likeButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var ImageCollecHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var feelButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var repliesTableView: UITableView!
     @IBOutlet weak var replyNumberLabel: UILabel!
     @IBOutlet weak var likeNumberLabel: UILabel!
@@ -21,13 +24,18 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     @IBOutlet weak var writerLevelButton: UIButton!
     @IBOutlet weak var writerImageButton: UIButton!
     @IBOutlet weak var writerPartButton: UIButton!
-
+    @IBOutlet weak var feelButton: UIButton!
+    @IBOutlet weak var partButton: UIButton!
+    var vc: MainTimeLineVC?
+    var onePostVC : LookPostVC?
     var timeLineVM: TimeLine?
     var replies: [Reply?]?
-    func contfigure(_ model: TimeLine )  {
+    var uploadedDelegate: ImageCollectionDelegate?
+    
+    func contfigure(_ model: TimeLine, vc:MainTimeLineVC)  {
         
         self.timeLineVM = model
-    
+        self.vc = vc
         configureWriterImageView()
         configureWriterLevelView()
         configureWriterNameView()
@@ -43,7 +51,69 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         self.repliesTableView.rowHeight = UITableViewAutomaticDimension;
         self.repliesTableView.estimatedRowHeight = 80.0;
         
+        
+         self.imageCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
+        uploadedDelegate = ImageCollectionDelegate.init(sc:self.vc!, data: (self.timeLineVM?.uploadedImage)!)
+        self.imageCollectionView.delegate =  uploadedDelegate
+        self.imageCollectionView.dataSource = uploadedDelegate
+        
+        
+       
+       
+         self.feelButtonHeightConstraint.constant = 0
+        self.partButton.isHidden = true
+        self.feelButton.isHidden = true
+        if(self.timeLineVM?.uploadedImage?.count == 0){
+        
+         self.ImageCollecHeightConstraint.constant = 0
+             self.likeButtonTopConstraint.constant = 0
+            
+        }
+       
+       
     }
+    
+    func contfigureOnePost(_ model: TimeLine, vc:LookPostVC)  {
+        
+        self.timeLineVM = model
+        self.onePostVC = vc
+        configureWriterImageView()
+        configureWriterLevelView()
+        configureWriterNameView()
+        configureWriterDateView()
+        configurePostTitleView()
+        configurePostTextView()
+        configureLikeNumberView()
+        configurereplyNumberView()
+        
+        self.replies = model.replies
+        self.repliesTableView.delegate = self
+        self.repliesTableView.dataSource = self
+      //  self.repliesTableView.rowHeight = UITableViewAutomaticDimension;
+       // self.repliesTableView.estimatedRowHeight = 80.0;
+          self.repliesTableView.estimatedSectionFooterHeight = 37
+        
+        self.imageCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
+        uploadedDelegate = ImageCollectionDelegate.init(lookPostVC:self.onePostVC!, data: (self.timeLineVM?.uploadedImage)!)
+        self.imageCollectionView.delegate =  uploadedDelegate
+        self.imageCollectionView.dataSource = uploadedDelegate
+        
+        let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(feelButton.frame.height/2), backgroundColor: .white)
+        
+        self.feelButton.configureButton(style:.fillStyle, buttonVM: btnVM)
+        
+        
+        
+        self.partButton.configureButton(style:.fillStyle, buttonVM: btnVM)
+    
+       // if(self.timeLineVM?.uploadedImage?.count == 0){
+        
+            self.ImageCollecHeightConstraint.constant = 0
+            self.likeButtonTopConstraint.constant = 0
+    //    }
+    
+    }
+
     
     func configureWriterImageView() {
         let vm = TimeLineWriterButtonViewModel(indata:timeLineVM!, my:self.writerImageButton)
@@ -119,6 +189,17 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         }
     }
     
+    @IBAction func touchUpInsideMoreButton(_ sender: UIButton) {
+        
+        guard let  optVC = self.vc else { return DefaultAlert().basicAlert(title:"더보기", inputMessage:"", viewController:onePostVC!, alertButtonStyle:.TwoButtonStyle) { (
+            ) in
+            
+            } }
+        DefaultAlert().basicAlert(title:"더보기", inputMessage:"", viewController: optVC, alertButtonStyle:.TwoButtonStyle) { (
+            ) in
+            
+        }
+    }
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,7 +215,7 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+     
         let replyCell = Bundle.main.loadNibNamed("ReplyCell", owner:self, options: nil)?.first as! ReplyCell
         if let data = self.replies?[indexPath.row] {
             
@@ -142,6 +223,15 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
             
         }
         return replyCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = UIView(frame:CGRect(x: 0, y: 0, width:self.frame.size.width, height: 37))
+        let replyView = ReplyMoreView.instanceFromNib() as! ReplyMoreView
+        footerView.addSubview(replyView)
+        replyView.setFromVC(vc: self.onePostVC!)
+        return footerView
     }
     
 }

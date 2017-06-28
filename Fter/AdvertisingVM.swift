@@ -27,6 +27,23 @@ struct AdImageViewModel:ImageForCellProtocol {
             
         }
 }
+struct UploadImageViewModel:ImageForCellProtocol {
+    
+    var image: UIImage
+    //var radious: CGFloat
+    
+    init?(indata:UploadedImage) {
+        
+        guard let imageString =  indata.uploaded else { return nil }
+        //킹피숴 대체해야함
+        print(imageString)
+        self.image = UIImage(named:imageString)!
+        
+        
+    }
+}
+
+
 
 struct AdTitleViewModel:TextForCellProtocol {
     var title: String

@@ -10,11 +10,12 @@ import UIKit
 
 class AdverTisingCell: UICollectionViewCell {
 
+    
     @IBOutlet weak var advertisingTitle: UILabel!
     @IBOutlet weak var advertisingImageView: UIImageView!
   
         var data: AdverTising?
-
+    var uploadedImageData: UploadedImage?
     
     func configure(_ model:AdverTising) {
       
@@ -22,6 +23,22 @@ class AdverTisingCell: UICollectionViewCell {
         configurePhotoImage()
         confiugureAdTitle()
     }
+    
+    func configureUploaded(_ model:UploadedImage) {
+        
+        self.uploadedImageData = model
+        configureUploadedImage()
+        
+    }
+    func configureUploadedImage(){
+        
+        
+        let vm = UploadImageViewModel.init(indata:uploadedImageData!)
+        
+        self.advertisingImageView.configureAdPhotosImage(vm!)
+        
+    }
+    
     
     func configurePhotoImage(){
     
@@ -39,5 +56,5 @@ class AdverTisingCell: UICollectionViewCell {
         self.advertisingTitle.adTitleLabelConfiugure(vm!)
     }
 
-
+    
 }

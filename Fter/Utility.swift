@@ -46,6 +46,7 @@ struct UserDefaultString {
 enum AlertButtonStyle {
     case  OneButtonStyle
     case  TwoButtonStyle
+    case  FourButtonStyle
 }
 
 
@@ -95,6 +96,77 @@ class DefaultAlert {
     func basicAlert(title:String, inputMessage:String, viewController: UIViewController ,alertButtonStyle:AlertButtonStyle,complete:((Void) -> Void)?) {
         
         let alert = UIAlertController(title: title, message: inputMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        if(alertButtonStyle == AlertButtonStyle.OneButtonStyle){
+            
+            alert.addAction(UIAlertAction(title: "삭제하기", style: UIAlertActionStyle.default, handler:nil))
+            
+        } else if(alertButtonStyle == AlertButtonStyle.TwoButtonStyle){
+            
+            alert.addAction(UIAlertAction(title: "삭제하기", style: UIAlertActionStyle.default, handler: {
+                
+                //부모뷰찾는거해야함
+                alertAction in
+                if let vc = viewController.presentationController {
+                    viewController.dismiss(animated: true, completion:nil)
+                    guard let cpl = complete else{
+                        
+                        return
+                    }
+                    cpl()
+                }
+                
+                viewController.navigationController?.popViewController(animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "수정하기", style: UIAlertActionStyle.default, handler: {
+                
+                //부모뷰찾는거해야함
+                alertAction in
+                if let vc = viewController.presentationController {
+                    viewController.dismiss(animated: true, completion:nil)
+                    guard let cpl = complete else{
+                        
+                        return
+                    }
+                    cpl()
+                }
+                
+                viewController.navigationController?.popViewController(animated: true)
+            }))
+
+            
+            
+            
+            alert.addAction(UIAlertAction(title: "취소하기", style: UIAlertActionStyle.destructive, handler:nil))
+        }
+        
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+
+class DefaultAlert2 {
+    
+    
+    /**
+     프로젝트 내에서 공통적으로 사용할 커스텀Alert입니다.
+     
+     - parameters:
+     - title: Alert의 상단 가운데 제목
+     - inputMessage: 제목 외에 추가적인 내용
+     - viewController: action을 사용할 VC(주로 self)
+     - alertButtonStyle: OneButton 기본형식과 TwoButton 동작포함형식
+     
+     closure를 파라미터로 추가예정
+     ---
+     **/
+    
+    private var completeHandler: ((Void) -> Void)?
+    
+    func basicAlert(title:String, inputMessage:String, viewController: UIViewController ,alertButtonStyle:AlertButtonStyle,complete:((Void) -> Void)?) {
+        
+        let alert = UIAlertController(title: title, message: inputMessage, preferredStyle: UIAlertControllerStyle.actionSheet)
         
         if(alertButtonStyle == AlertButtonStyle.OneButtonStyle){
             

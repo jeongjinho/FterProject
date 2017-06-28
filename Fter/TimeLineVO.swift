@@ -23,7 +23,8 @@ public class TimeLine:NSObject {
     var writerLevel: Int?
     var postTitle: String?
     var writerImage: String?
-    init(sreplies:[Reply]?,sreplyNumber:Int,slikeNumber:Int,spostText:String,swrittenDate:String,swriterName:String,swriterLevel:Int,spostTitle:String,swriterImage:String) {
+    var uploadedImage: [UploadedImage]?
+    init(sreplies:[Reply]?,sreplyNumber:Int,slikeNumber:Int,spostText:String,swrittenDate:String,swriterName:String,swriterLevel:Int,spostTitle:String,swriterImage:String,suploadedImage:[UploadedImage]?) {
         
         replies = sreplies
         replyNumber = sreplyNumber
@@ -34,11 +35,12 @@ public class TimeLine:NSObject {
         writerLevel = swriterLevel
         postTitle = spostTitle
         writerImage = swriterImage
+        uploadedImage = suploadedImage
     }
     
 }
 
-
+//  광고하나
  class AdverTising: NSObject{
     
     var adPhotoName:String?
@@ -48,6 +50,19 @@ public class TimeLine:NSObject {
         adTitle = title
     }
 }
+
+
+class UploadedImage: NSObject {
+    
+    var uploaded: String?
+    
+    init(imageName: String) {
+        self.uploaded = imageName
+    }
+}
+
+
+
 
 
 

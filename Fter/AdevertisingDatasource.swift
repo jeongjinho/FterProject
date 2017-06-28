@@ -46,35 +46,25 @@ extension AdvertisingDelegate:UICollectionViewDataSource{
         return adCell
     }
     
-     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let numberOfCells = self.data.count
-        let page = Int(scrollView.contentOffset.x) / Int(scrollView.frame.size.width)
-       
-        print("page:" + "\(page)")
-        
-        if (page == self.data.count - 1){
-            
-            scrollView.contentOffset = CGPoint(x:0.0, y: 0.0)
-        
-        }
-        // if you need to know changed position, you can delegate it
-     //   customDelegate?.pageChanged(currentPage)
-    }
     
-   
-//     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        let numberOfCells = self.data.count
-//        if numberOfCells == 1 {
-//            return
+//        let page = Int(scrollView.contentOffset.x) / Int(scrollView.frame.size.width)
+//        
+//        print("page:" + "\(page)")
+//        
+//        if (page == self.data.count - 1){
+//            
+//            scrollView.contentOffset = CGPoint(x:0.0, y: 0.0)
+//            self.vc.adPagingControl.currentPage = page
 //        }
-//        let regularContentOffset = scrollView.frame.size.width * CGFloat(numberOfCells - 2)
-//        if (scrollView.contentOffset.x >= scrollView.frame.size.width * CGFloat(numberOfCells - 1)) {
-//            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x - regularContentOffset, y: 0.0)
-//        } else if (scrollView.contentOffset.x < scrollView.frame.size.width) {
-//            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x + regularContentOffset, y: 0.0)
-//        }
+//        self.vc.adPagingControl.currentPage = page
 //    }
+ 
     
+        
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+    }
 
 }

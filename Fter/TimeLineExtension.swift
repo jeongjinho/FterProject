@@ -32,8 +32,8 @@ extension UILabel{
         self.text = viewModel.title
         
         self.textColor = viewModel.textColor
-        self.numberOfLines = 0
-        self.lineBreakMode = .byWordWrapping
+//        self.numberOfLines = 0
+//        self.lineBreakMode = .byWordWrapping
         
     }
     
