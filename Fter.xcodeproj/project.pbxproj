@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		05492C88235518462169ED2D /* Pods_FterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15CDAF48A0877F620C68626 /* Pods_FterUITests.framework */; };
+		7B0120B81F02F5D200E9B28F /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0120B71F02F5D200E9B28F /* Dispatch.swift */; };
+		7B0120BA1F03019100E9B28F /* AdvertisingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0120B91F03019100E9B28F /* AdvertisingDelegate.swift */; };
+		7B0120BC1F0302AE00E9B28F /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0120BB1F0302AE00E9B28F /* CardVC.swift */; };
 		7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B57FE1F00A82800944004 /* CellViewModel.swift */; };
 		7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B58021F00A92600944004 /* TimeLineVO.swift */; };
 		7B61DC9A1F015438007C7E55 /* CustomTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */; };
@@ -17,7 +20,7 @@
 		7B61DCA41F016ECD007C7E55 /* ReplyVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */; };
 		7B61DCA61F0173AE007C7E55 /* ReplyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */; };
 		7B61DCA81F017E66007C7E55 /* TimeLineVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */; };
-		7B61DCAB1F01F508007C7E55 /* TimeLineExteion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */; };
+		7B61DCAB1F01F508007C7E55 /* TimeLineExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAA1F01F508007C7E55 /* TimeLineExtension.swift */; };
 		7B61DCAD1F022DBE007C7E55 /* AdevertisingDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */; };
 		7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */; };
 		7B61DCB11F0230ED007C7E55 /* AdverTisingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */; };
@@ -25,6 +28,8 @@
 		7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */; };
 		7B61DCBA1F02713D007C7E55 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCB91F02713D007C7E55 /* MapVC.swift */; };
 		7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCBC1F027301007C7E55 /* FterNavigation.swift */; };
+		7B61DCBF1F02A646007C7E55 /* AdvertisingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCBE1F02A646007C7E55 /* AdvertisingExtension.swift */; };
+		7B61DCC11F02ADEF007C7E55 /* ReplyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DCC01F02ADEF007C7E55 /* ReplyExtension.swift */; };
 		7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B49F1F00FA840041156E /* NetworkModel.swift */; };
 		7B63B4A31F00FB4E0041156E /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */; };
 		7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63B4A71F0106C80041156E /* PostingVC.swift */; };
@@ -71,6 +76,9 @@
 		25ECF8B2909D55B1DF23FFEE /* Pods-Fter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.debug.xcconfig"; sourceTree = "<group>"; };
 		481C31C90A86B261F69720A3 /* Pods-Fter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fter/Pods-Fter.release.xcconfig"; sourceTree = "<group>"; };
 		65248DA28E1AB714F7EA3AF4 /* Pods-FterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FterUITests/Pods-FterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7B0120B71F02F5D200E9B28F /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
+		7B0120B91F03019100E9B28F /* AdvertisingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingDelegate.swift; sourceTree = "<group>"; };
+		7B0120BB1F0302AE00E9B28F /* CardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		7B5B57FE1F00A82800944004 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		7B5B58021F00A92600944004 /* TimeLineVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVO.swift; sourceTree = "<group>"; };
 		7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeLineCell.swift; sourceTree = "<group>"; };
@@ -80,7 +88,7 @@
 		7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyVO.swift; sourceTree = "<group>"; };
 		7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyVM.swift; sourceTree = "<group>"; };
 		7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVM.swift; sourceTree = "<group>"; };
-		7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineExteion.swift; sourceTree = "<group>"; };
+		7B61DCAA1F01F508007C7E55 /* TimeLineExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineExtension.swift; sourceTree = "<group>"; };
 		7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdevertisingDatasource.swift; sourceTree = "<group>"; };
 		7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdverTisingCell.swift; sourceTree = "<group>"; };
 		7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdverTisingCell.xib; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 		7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingFlowLayoutDelegate.swift; sourceTree = "<group>"; };
 		7B61DCB91F02713D007C7E55 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		7B61DCBC1F027301007C7E55 /* FterNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FterNavigation.swift; sourceTree = "<group>"; };
+		7B61DCBE1F02A646007C7E55 /* AdvertisingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingExtension.swift; sourceTree = "<group>"; };
+		7B61DCC01F02ADEF007C7E55 /* ReplyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyExtension.swift; sourceTree = "<group>"; };
 		7B63B49F1F00FA840041156E /* NetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		7B63B4A21F00FB4E0041156E /* NetworkingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
 		7B63B4A71F0106C80041156E /* PostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingVC.swift; sourceTree = "<group>"; };
@@ -155,6 +165,14 @@
 				F15CDAF48A0877F620C68626 /* Pods_FterUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B0120BD1F0302B400E9B28F /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				7B0120BB1F0302AE00E9B28F /* CardVC.swift */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 		7B5B57EC1F009C2B00944004 /* Segment */ = {
@@ -240,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				7B61DCAC1F022DBE007C7E55 /* AdevertisingDatasource.swift */,
+				7B0120B91F03019100E9B28F /* AdvertisingDelegate.swift */,
 				7B61DCB51F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift */,
 			);
 			name = VM;
@@ -256,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				7B61DCA71F017E66007C7E55 /* TimeLineVM.swift */,
-				7B61DCAA1F01F508007C7E55 /* TimeLineExteion.swift */,
+				7B61DCAA1F01F508007C7E55 /* TimeLineExtension.swift */,
 				7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */,
 				7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */,
 			);
@@ -270,6 +289,7 @@
 				7B61DC9D1F016552007C7E55 /* ReplyCell.xib */,
 				7B61DCA31F016ECD007C7E55 /* ReplyVO.swift */,
 				7B61DCA51F0173AE007C7E55 /* ReplyVM.swift */,
+				7B61DCC01F02ADEF007C7E55 /* ReplyExtension.swift */,
 			);
 			name = ReplyCell;
 			sourceTree = "<group>";
@@ -291,6 +311,7 @@
 				7B61DCAE1F0230ED007C7E55 /* AdverTisingCell.swift */,
 				7B61DCAF1F0230ED007C7E55 /* AdverTisingCell.xib */,
 				7B61DCB31F0231BE007C7E55 /* AdvertisingVM.swift */,
+				7B61DCBE1F02A646007C7E55 /* AdvertisingExtension.swift */,
 			);
 			name = AdvertisingCell;
 			sourceTree = "<group>";
@@ -366,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				7B81704D1EFFBA7700489D2C /* Utility.swift */,
+				7B0120B71F02F5D200E9B28F /* Dispatch.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -439,6 +461,7 @@
 				7B8170541EFFCC7400489D2C /* MainTimeLine */,
 				7B63B4A61F0106A20041156E /* Posting */,
 				7B61DCBB1F02714E007C7E55 /* Map */,
+				7B0120BD1F0302B400E9B28F /* Card */,
 				7B8170501EFFCC4200489D2C /* StoryBoard */,
 				7B8170511EFFCC4B00489D2C /* Resource */,
 			);
@@ -763,17 +786,21 @@
 			files = (
 				7B8170451EFFACF700489D2C /* ProfileVC.swift in Sources */,
 				7B61DC9A1F015438007C7E55 /* CustomTimeLineCell.swift in Sources */,
+				7B0120B81F02F5D200E9B28F /* Dispatch.swift in Sources */,
 				7B63B4A31F00FB4E0041156E /* NetworkingModel.swift in Sources */,
 				7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */,
+				7B61DCC11F02ADEF007C7E55 /* ReplyExtension.swift in Sources */,
 				7B61DCA81F017E66007C7E55 /* TimeLineVM.swift in Sources */,
 				7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */,
 				7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */,
 				7B61DCA41F016ECD007C7E55 /* ReplyVO.swift in Sources */,
 				7B61DCAD1F022DBE007C7E55 /* AdevertisingDatasource.swift in Sources */,
 				7B8C28CF1EFEA7C500E5ECF7 /* AppDelegate.swift in Sources */,
+				7B0120BC1F0302AE00E9B28F /* CardVC.swift in Sources */,
 				7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */,
-				7B61DCAB1F01F508007C7E55 /* TimeLineExteion.swift in Sources */,
+				7B61DCAB1F01F508007C7E55 /* TimeLineExtension.swift in Sources */,
 				7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */,
+				7B0120BA1F03019100E9B28F /* AdvertisingDelegate.swift in Sources */,
 				7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */,
 				7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */,
 				7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */,
@@ -781,6 +808,7 @@
 				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
 				7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */,
+				7B61DCBF1F02A646007C7E55 /* AdvertisingExtension.swift in Sources */,
 				7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */,
 				7B61DC9E1F016552007C7E55 /* ReplyCell.swift in Sources */,
 				7B63B4A01F00FA840041156E /* NetworkModel.swift in Sources */,

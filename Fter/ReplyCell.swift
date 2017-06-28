@@ -14,7 +14,7 @@ class ReplyCell: UITableViewCell {
     @IBOutlet weak var replyTimeLabel: UILabel!
     @IBOutlet weak var replyLabel: UILabel!
  
-    @IBOutlet weak var replyerImageView: UIImageView!
+    @IBOutlet weak var replyerButton: UIButton!
     
     var replyVM: Reply?
     
@@ -23,9 +23,9 @@ class ReplyCell: UITableViewCell {
         
         self.replyVM = model
         configureReply()
-        configureReplyTime()
+        //configureReplyTime()
         configureReplyerName()
-        configureReplyerImage()
+        configureReplyerImageButoon()
         
     }
 
@@ -44,10 +44,10 @@ class ReplyCell: UITableViewCell {
         
         self.replyTimeLabel.configureReplyLabel(vm!)
     }
-    func configureReplyerImage() {
-        let vm = ReplyerImageModel(indata:replyVM!, my:self.replyerImageView)
+    func configureReplyerImageButoon() {
+        let vm = ReplyerButtonModel(indata:replyVM!, my:self.replyerButton)
         
-        self.replyerImageView.configureReplyImage(vm!)
+        self.replyerButton.replyerImageButtonConfigure(vm!)
     }
     
     

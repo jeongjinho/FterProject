@@ -566,6 +566,25 @@
             </objects>
             <point key="canvasLocation" x="-839" y="2640"/>
         </scene>
+        <!--카드뷰-->
+        <scene sceneID="EGW-ct-XDb">
+            <objects>
+                <viewController storyboardIdentifier="CardVC" id="vGP-cb-OfJ" customClass="CardVC" customModule="Fter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0E-ak-OPb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qfE-Ou-j2P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A1V-7H-X2Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="카드뷰" id="TK6-C2-y4s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nH-7o-yCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="3416.576086956522"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Ntb-sE-MJ4">
             <objects>
@@ -907,7 +926,6 @@
         <!--Navigation Controller-->
         <scene sceneID="cFj-v3-Vc7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4cI-uc-O82" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xg9-Dj-ckX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tap1" selectedImage="tap1select" id="eAX-ew-jFy">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
@@ -923,6 +941,7 @@
                         <segue destination="nxg-Bs-7xh" kind="relationship" relationship="rootViewController" id="eJI-zv-joG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cI-uc-O82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-839.13043478260875" y="1867.663043478261"/>
         </scene>
@@ -943,6 +962,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ke-bo-5ET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="2639.6739130434785"/>
+        </scene>
+        <!--Fter Navigation-->
+        <scene sceneID="Khs-73-w5j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qs7-9h-mxh" customClass="FterNavigation" customModule="Fter" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="baA-hl-td2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vGP-cb-OfJ" kind="relationship" relationship="rootViewController" id="W38-r2-IN5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fK8-rz-R8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-820.28985507246387" y="3416.576086956522"/>
         </scene>
     </scenes>
     <resources>

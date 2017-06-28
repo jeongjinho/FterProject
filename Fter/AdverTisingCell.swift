@@ -10,24 +10,33 @@ import UIKit
 
 class AdverTisingCell: UICollectionViewCell {
 
+    @IBOutlet weak var advertisingTitle: UILabel!
     @IBOutlet weak var advertisingImageView: UIImageView!
   
-        var photos: AdverTisingPhoto?
+        var data: AdverTising?
 
     
-    func configure(_ model:AdverTisingPhoto) {
+    func configure(_ model:AdverTising) {
       
-        self.photos = model
+        self.data = model
         configurePhotoImage()
+        confiugureAdTitle()
     }
     
     func configurePhotoImage(){
     
     
-        let vm = AdImageViewModel.init(indata:photos!)
+        let vm = AdImageViewModel.init(indata:data!)
     
         self.advertisingImageView.configureAdPhotosImage(vm!)
         
+    }
+    
+    func confiugureAdTitle() {
+        
+     let vm = AdTitleViewModel.init(indata: data!)
+        
+        self.advertisingTitle.adTitleLabelConfiugure(vm!)
     }
 
 

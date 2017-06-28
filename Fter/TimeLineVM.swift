@@ -106,12 +106,12 @@ struct TimeLineReplyNumberViewModel:TextForCellProtocol {
 }
 
 
-struct TimeLineWriterImageViewModel:ImageForCellProtocol {
+struct TimeLineWriterButtonViewModel:ImageForCellProtocol {
     
     var image: UIImage
     var radious: CGFloat
     
-    init?(indata:TimeLine,my:UIImageView) {
+    init?(indata:TimeLine,my:UIButton) {
         
         guard let imageString =  indata.writerImage else { return nil }
             //킹피숴 대체해야함

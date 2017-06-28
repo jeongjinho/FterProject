@@ -49,12 +49,12 @@ struct ReplyTimeViewModel:TextForCellProtocol {
     }
 }
 
-struct ReplyerImageModel:ImageForCellProtocol {
+struct ReplyerButtonModel:ImageForCellProtocol {
     
     var image: UIImage
     var radious: CGFloat
     
-    init?(indata:Reply,my:UIImageView) {
+    init?(indata:Reply,my:UIButton) {
         
         guard let imageString =  indata.replyerImage else { return nil }
         //킹피숴 대체해야함

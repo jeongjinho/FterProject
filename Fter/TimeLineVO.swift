@@ -39,12 +39,13 @@ public class TimeLine:NSObject {
 }
 
 
- class AdverTisingPhoto: NSObject{
+ class AdverTising: NSObject{
     
     var adPhotoName:String?
-    
-    init(photos:String) {
+    var adTitle: String?
+    init(title:String,photos:String) {
         adPhotoName = photos
+        adTitle = title
     }
 }
 

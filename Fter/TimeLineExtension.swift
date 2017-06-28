@@ -17,7 +17,7 @@ extension UITextView{
         print("\(self.text)")
         self.textColor = viewModel.textColor
         self.isEditable = false
-        
+        self.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     
     
@@ -32,6 +32,8 @@ extension UILabel{
         self.text = viewModel.title
         
         self.textColor = viewModel.textColor
+        self.numberOfLines = 0
+        self.lineBreakMode = .byWordWrapping
         
     }
     
@@ -45,13 +47,7 @@ extension UILabel{
     
 }
 extension UIButton{
-    func configureReplyButton(_ viewModel: TextForCellProtocol) {
-        
-        self.titleLabel?.text = viewModel.title
-        // print("\(self.text)")
-        self.setTitleColor(viewModel.textColor, for: .normal)
-        
-    }
+   
     
     func configureTimeLineButton(_ viewModel: TextForCellProtocol) {
         
@@ -60,15 +56,15 @@ extension UIButton{
         self.setTitleColor(viewModel.textColor, for: .normal)
         
     }
-    func configureAdButton(_ viewModel: ImageForCellProtocol) {
+    func configureTimeLineButtonImage(_ viewModel: ImageForCellProtocol) {
         
-        //self.titleLabel?.text = viewModel.title
+            self.setBackgroundImage(viewModel.image, for: .normal)
+            self.layer.cornerRadius = viewModel.radious
         // print("\(self.text)")
-       // self.setTitleColor(viewModel.textColor, for: .normal)
+      
         
-
-        self.setImage(viewModel.image, for:.normal)
     }
+   
     
 }
 

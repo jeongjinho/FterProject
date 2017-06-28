@@ -12,15 +12,15 @@ import UIKit
 class AdvertisingDelegate: NSObject {
     
     var vc : MainTimeLineVC
-    var data = [AdverTisingPhoto?]()
+    var data = [AdverTising?]()
     var currentPage: Int?
-    init(sc :MainTimeLineVC,data:[AdverTisingPhoto]) {
+    init(sc :MainTimeLineVC,data:[AdverTising]) {
         self.vc = sc
        self.data = data
     }
 }
 
-extension AdvertisingDelegate: UICollectionViewDelegate,UICollectionViewDataSource{
+extension AdvertisingDelegate:UICollectionViewDataSource{
 
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

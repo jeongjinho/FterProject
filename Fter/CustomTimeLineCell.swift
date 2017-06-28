@@ -19,7 +19,9 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     @IBOutlet weak var writtenDateLabel: UILabel!
     @IBOutlet weak var writerNameButton: UIButton!
     @IBOutlet weak var writerLevelButton: UIButton!
-    @IBOutlet weak var writerImageView: UIImageView!
+    @IBOutlet weak var writerImageButton: UIButton!
+    @IBOutlet weak var writerPartButton: UIButton!
+
     var timeLineVM: TimeLine?
     var replies: [Reply?]?
     func contfigure(_ model: TimeLine )  {
@@ -34,17 +36,19 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         configurePostTextView()
         configureLikeNumberView()
         configurereplyNumberView()
-        
+       
         self.replies = model.replies
         self.repliesTableView.delegate = self
         self.repliesTableView.dataSource = self
+        self.repliesTableView.rowHeight = UITableViewAutomaticDimension;
+        self.repliesTableView.estimatedRowHeight = 80.0;
         
     }
     
     func configureWriterImageView() {
-        let vm = TimeLineWriterImageViewModel(indata:timeLineVM!, my:self.writerImageView)
+        let vm = TimeLineWriterButtonViewModel(indata:timeLineVM!, my:self.writerImageButton)
         
-        self.writerImageView.configureTimeLineImage(vm!)
+        self.writerImageButton.configureTimeLineButtonImage(vm!)
     }
     func configureWriterLevelView() {
         let vm = TimeLineLevelViewModel(indata:timeLineVM!)
@@ -125,7 +129,7 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
             guard let cnt = replies?.count else { return 0 }
-        
+        print(cnt)
         return cnt
     }
     

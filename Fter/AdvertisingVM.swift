@@ -17,7 +17,7 @@ struct AdImageViewModel:ImageForCellProtocol {
         var image: UIImage
         //var radious: CGFloat
         
-        init?(indata:AdverTisingPhoto) {
+        init?(indata:AdverTising) {
             
             guard let imageString =  indata.adPhotoName else { return nil }
             //킹피숴 대체해야함
@@ -28,3 +28,15 @@ struct AdImageViewModel:ImageForCellProtocol {
         }
 }
 
+struct AdTitleViewModel:TextForCellProtocol {
+    var title: String
+    var textFontStyle: UIFont
+    var textColor: UIColor
+    init?(indata:AdverTising) {
+        
+        guard let titleString =  indata.adTitle else { return nil }
+        self.title = "\(titleString)"
+        self.textFontStyle = UIFont(name:"HelveticaNeue-Bold", size: 18.0)!
+        self.textColor = .white
+    }
+}
