@@ -17,7 +17,7 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     @IBOutlet weak var replyNumberLabel: UILabel!
     @IBOutlet weak var likeNumberLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var postTextView: UILabel!
     @IBOutlet weak var PostTitleLabel: UILabel!
     @IBOutlet weak var writtenDateLabel: UILabel!
     @IBOutlet weak var writerNameButton: UIButton!
@@ -31,7 +31,9 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     var timeLineVM: TimeLine?
     var replies: [Reply?]?
     var uploadedDelegate: ImageCollectionDelegate?
-    
+    // 더보기삽입 본문에
+    var moreText = "...더보기"
+    var Point :CGFloat?
     func contfigure(_ model: TimeLine, vc:MainTimeLineVC)  {
         
         self.timeLineVM = model
@@ -57,9 +59,37 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         self.imageCollectionView.delegate =  uploadedDelegate
         self.imageCollectionView.dataSource = uploadedDelegate
         
+        self.postTextView.isUserInteractionEnabled = true
+    
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        postTextView.addGestureRecognizer(tapGestureRecognizer)
         
-       
-       
+        let str = postTextView!.text!
+        let range = (str as NSString).range(of: moreText, options: .backwards)
+        let attributedStr = NSMutableAttributedString(string: str)
+        attributedStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: range)
+        postTextView.attributedText = attributedStr
+     
+        
+        print(postTextView.intrinsicContentSize.width)
+               print(postTextView.isTruncated())
+//              postTextView.text = String(self.postTextView.text!.characters.dropLast(moreText.characters.count))
+//                         while  postTextView.isTruncated() {
+//                                let temp = self.postTextView.text!
+//                        postTextView.text = String(temp.characters.dropLast(moreText.characters.count))
+//                        print(postTextView.text)
+//        
+//        
+//                }
+//                postTextView.text = String(self.postTextView.text!.characters.dropLast(moreText.characters.count))
+//               
+//                let reduceSTr = "\(postTextView.text! + moreText)"
+//                print(reduceSTr)
+        let ints = CGFloat(self.postTextView.numberOfLines + 1)
+         let size =   postTextView.intrinsicContentSize.width / ints
+        
+        ////////////////
+        self.Point = size
          self.feelButtonHeightConstraint.constant = 0
         self.partButton.isHidden = true
         self.feelButton.isHidden = true
@@ -71,6 +101,65 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         }
        
        
+    }
+    
+    func tapGesture(gestureRecognizer:UIGestureRecognizer) {
+        
+        guard let txt = self.postTextView.text else { return  }
+        let touchPoint = gestureRecognizer.location(in:self.postTextView)
+        let txtStorage = NSTextStorage(attributedString: NSAttributedString(string: moreText))
+        let layoutManager = NSLayoutManager()
+        txtStorage.addLayoutManager(layoutManager)
+        let  txtContainer = NSTextContainer(size: postTextView.frame.size)
+        layoutManager.addTextContainer(txtContainer)
+        txtContainer.lineBreakMode = .byWordWrapping
+        txtContainer.lineFragmentPadding = 0
+            let range = (txt as NSString).range(of:moreText)
+        let toRage = (txt as NSString).range(of: moreText)
+        let glyphRange = layoutManager.glyphRange(forCharacterRange:range, actualCharacterRange: nil)
+        let glyphRect = layoutManager.boundingRect(forGlyphRange: glyphRange, in: txtContainer)
+        print(glyphRect)
+        print(touchPoint)
+       
+        print(self.Point)
+        let sse = CGFloat(self.postTextView.numberOfLines)
+        let ss = self.postTextView.frame.size.width / sse
+        print(ss)
+        
+         let size: CGSize = postTextView.text!.size(attributes: [NSFontAttributeName: UIFont(name: "Helvetica", size: 12.0)!])
+         var seeee = (size.width / sse) - self.postTextView.frame.size.width
+        
+        
+        var chas: CGFloat
+        if(seeee < 0 ){
+        
+         chas =  seeee
+        } else{
+            chas = -seeee
+
+        }
+             print(chas)
+        if(ss + 30   <= touchPoint.x  ){
+            
+            print(self.postTextView.frame.size.width)
+            print(touchPoint.x)
+            
+            if(self.postTextView.frame.size.width   >= touchPoint.x  ){
+            
+           
+                if(chas >= 0.0 || self.postTextView.frame.size.width   >= touchPoint.x){
+                      //  print("tap")
+                    
+                    print(Int(chas))
+                    if(self.postTextView.frame.size.width   >= touchPoint.x - chas - 30  ){
+                         
+                        print("tap")
+
+                    }
+                }
+            }
+        
+        }
     }
     
     func contfigureOnePost(_ model: TimeLine, vc:LookPostVC)  {
@@ -87,16 +176,20 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         configurereplyNumberView()
         
         self.replies = model.replies
-        self.repliesTableView.delegate = self
+       self.repliesTableView.delegate = self
         self.repliesTableView.dataSource = self
-      //  self.repliesTableView.rowHeight = UITableViewAutomaticDimension;
-       // self.repliesTableView.estimatedRowHeight = 80.0;
+        self.repliesTableView.rowHeight = UITableViewAutomaticDimension;
+        self.repliesTableView.estimatedRowHeight = 80.0;
           self.repliesTableView.estimatedSectionFooterHeight = 37
         
         self.imageCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
         uploadedDelegate = ImageCollectionDelegate.init(lookPostVC:self.onePostVC!, data: (self.timeLineVM?.uploadedImage)!)
         self.imageCollectionView.delegate =  uploadedDelegate
         self.imageCollectionView.dataSource = uploadedDelegate
+        
+        
+        
+        
         
         let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(feelButton.frame.height/2), backgroundColor: .white)
         
@@ -161,6 +254,11 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         self.replyNumberLabel.configureTimeLineLabel(vm!)
     }
+    func configureLikeButtonView() {
+        let vm = TimeLineLikeOrCotentsButtonViewModel(indata:timeLineVM!, my:self.feelButton)
+        
+        self.feelButton.configureTimeLineButtonImage(vm!)
+    }
 
 
     
@@ -202,6 +300,24 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // 델리게이트빼내기
     func numberOfSections(in tableView: UITableView) -> Int {
         
      return 1
@@ -211,7 +327,7 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
             guard let cnt = replies?.count else { return 0 }
         print(cnt)
-        return cnt
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

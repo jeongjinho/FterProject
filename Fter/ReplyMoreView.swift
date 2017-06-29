@@ -39,9 +39,11 @@ class ReplyMoreView: UIView {
         
         
         
-        let toVC = self.fromVC?.storyboard?.instantiateViewController(withIdentifier:"AllReplyVC")
-        self.fromVC?.navigationController?.pushViewController(toVC!, animated:true)
-        
+        let toVC = self.fromVC?.storyboard?.instantiateViewController(withIdentifier:"AllReplyVC") as! AllReplyVC
+        self.fromVC?.navigationController?.pushViewController(toVC, animated:true)
+        guard let replies = self.fromVC?.arrayData?[0]
+            else { return  }
+        toVC.replies = replies.replies
     }
     
    

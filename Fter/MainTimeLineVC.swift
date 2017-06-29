@@ -19,9 +19,12 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     var  photoData :[AdverTising?]?
     var isAutoScroll: Bool = true
     var idx : Int = 0
+    var currentSegment:Int = 0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+      
         
+           initialData()
        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.advertisingCollectionView.register(UINib(nibName: "AdverTisingCell", bundle: nil), forCellWithReuseIdentifier: "AdverTisingCell")
          adDelegate = AdvertisingDelegate.init(sc:self, data:photoData! as! [AdverTising])
@@ -29,28 +32,57 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
         self.advertisingCollectionView.delegate = adDelegate
         self.adPagingControl.numberOfPages = (self.photoData?.count)!
        
+       infiniteScroll()
+        for subView in menuSegment.subviews {
+            
+            if(subView .isKind(of:UIButton.self) == true){
+                
+                let btn = subView as! UIButton
+                btn.isSelected = false
+                
+                if(btn.tag == 0){
+                    
+                    btn.underLineView(isSelect:true)
+                }else{
+                    btn.underLineView(isSelect: false)
+                }
+                
+            }
+        }
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-//        guard let  cnt = self.photoData?.count else { return  }
-//        
-//        if(isAutoScroll){
-//            print("before idx:" + "\(idx)")
-//            DispatchQueue.background(delay: 5.0, background: {
-//                self.advertisingCollectionView.scrollToItem(at:IndexPath(row:self.idx,section:0), at: .right, animated: true)
-//            }, completion: {
-//                    
-//                    self.idx += 1
-//                    self.adPagingControl.currentPage = self.idx
-//                    
-//                    if(self.idx >= cnt){
-//                        self.idx = 0
-//                        self.adPagingControl.currentPage = self.idx
-//                        self.advertisingCollectionView.scrollToItem(at:IndexPath(row:self.idx,section:0), at:.right, animated: true)
-//                    }
-//                    self.viewWillAppear(false)
-//            })
-//
-//        
-//        }
+    }
+    
+    func infiniteScroll(){
+    
+        
+        guard let  cnt = self.photoData?.count else { return  }
+        
+        if(isAutoScroll){
+            print("before idx:" + "\(idx)")
+            DispatchQueue.background(delay: 3.5, background: {
+                self.advertisingCollectionView.scrollToItem(at:IndexPath(row:self.idx,section:0), at: .right, animated: true)
+            }, completion: {
+                
+                self.idx += 1
+                self.adPagingControl.currentPage = self.idx
+                
+                if(self.idx >= cnt){
+                    self.idx = 0
+                    self.adPagingControl.currentPage = self.idx
+                    self.advertisingCollectionView.scrollToItem(at:IndexPath(row:self.idx,section:0), at:.right, animated: true)
+                }
+                self.infiniteScroll()
+                self.isAutoScroll = true
+            })
+            
+            
+        }
+
     
     }
     
@@ -62,12 +94,16 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    
+
+        
         self.tabBarController?.delegate = self;
         self.timeLineTableView.delegate = self;
         self.timeLineTableView.dataSource = self;
        // self.timeLineTableView.rowHeight = UITableViewAutomaticDimension;
         self.timeLineTableView.estimatedRowHeight = 400
-         initialData()
+       
         
         
        
@@ -98,12 +134,21 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
     func initialData()  {
         
        
-        let one = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요", sreplyerName:"서수진", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요??????", sreplyerName:"서초구불나방", sreplyTime:"3시간전", sreplyerImage: "dummyProfile2")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은 끝이 없어요 그러니깐 그러니깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle: "니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1"),UploadedImage.init(imageName:"2"),UploadedImage.init(imageName:"3"),UploadedImage.init(imageName:"4"),UploadedImage.init(imageName:"5")])
+        let one = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요", sreplyerName:"서수진", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요??????", sreplyerName:"서초구불나방", sreplyTime:"3시간전", sreplyerImage: "dummyProfile2")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은 개발은 w고.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle: "니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1"),UploadedImage.init(imageName:"2"),UploadedImage.init(imageName:"3"),UploadedImage.init(imageName:"4"),UploadedImage.init(imageName:"5")])
         
-        let two = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은 끝이 없어요 그러니깐 그러니깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1"),UploadedImage.init(imageName:"2"),UploadedImage.init(imageName:"3"),UploadedImage.init(imageName:"4"),UploadedImage.init(imageName:"5")])
-    
+        let two = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은 끝이 없어요 그러니깐 그러니깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.개발은 끝이 없어요 그러니깐 그러니깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1")])
         
-        self.dummy = [one,two]
+        let third = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1")])
+        
+        let four = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1")])
+        
+
+        
+          let d = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1")])
+        
+      let s = TimeLine.init(sreplies:[Reply.init(sreply:"안녕하세요 저는정진호입니다. 만나서반갑습니다 뭐하고지내세요????", sreplyerName:"홍주ㅇㄴㅇㄴㅇ영", sreplyTime:"2시간전", sreplyerImage: "dummyProfile2"),Reply.init(sreply:"누세요", sreplyerName:"박주영", sreplyTime:"3시간전", sreplyerImage: "dummyProfile")], sreplyNumber:2, slikeNumber: 5, spostText:"개발은깐 맘비우고 편안히 하시면 어느새 완성되어 있을 겁니다.", swrittenDate:"19/02/34", swriterName:"이원진", swriterLevel:1, spostTitle:"니모를찾아서", swriterImage:"dummyProfile", suploadedImage:  [UploadedImage.init(imageName:"1")])
+        
+        self.dummy = [one,two,third,four,s,d]
         
         self.photoData = [AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제1탄!", photos:"1"),AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제2탄!", photos:"2"),AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제3탄!", photos:"3"),AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제4탄!", photos:"4"),AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제5탄!", photos:"5"),AdverTising.init(title:"개발자에게 필요한 툴 알아보기 제5탄!", photos:"6")]
         
@@ -129,8 +174,16 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
         let timeLineCell = Bundle.main.loadNibNamed("CustomTimeLineCell", owner: self, options:nil)?.first as! CustomTimeLineCell
         if let data = self.dummy?[indexPath.row] {
             
-            timeLineCell.contfigure(data, vc: self)
+           
             
+            DispatchQueue.background(delay:0.0, background: { 
+                
+                DispatchQueue.main.async {
+                timeLineCell.contfigure(data, vc: self)
+                
+                }
+
+            }, completion: nil)
         }
         return timeLineCell
         
@@ -187,7 +240,7 @@ class MainTimeLineVC: UIViewController,UITabBarControllerDelegate,UITableViewDel
         if(index == 1 ){
             
            let stoy = UIStoryboard.init(name:"Main", bundle:nil)
-             let vc  = stoy.instantiateViewController(withIdentifier:"PostingVCNavi")
+             let vc  = stoy.instantiateViewController(withIdentifier:"PostingVC")
             
            self.tabBarController?.present(vc, animated: true, completion: nil)
             return false;

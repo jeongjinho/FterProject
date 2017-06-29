@@ -12,6 +12,28 @@ import UIKit
 /**
  App내에서 공통적으로 자주사용하는 Color를 구조체형식으로 표현
  **/
+extension UILabel {
+    
+    func isTruncated() -> Bool {
+        
+        if let string = self.text {
+            
+            let size: CGSize = (string as NSString).boundingRect(
+                with: CGSize(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude),
+                options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                attributes: [NSFontAttributeName: self.font],
+                context: nil).size
+            
+            return (size.height > self.bounds.size.height)
+        }
+        
+        return false
+    }
+   
+    
+}
+
+
 struct AppColors {
     static let PupleColor = UIColor.init(red: 137/255.0, green: 158.0/255.0, blue: 242.0/255.0, alpha: 1.0)
     static let GrayColor = UIColor.init(red: 123.0/255.0, green: 123.0/255.0, blue: 123.0/255.0, alpha: 1.0)

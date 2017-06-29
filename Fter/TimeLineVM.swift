@@ -120,6 +120,20 @@ struct TimeLineWriterButtonViewModel:ImageForCellProtocol {
         
     }
 }
+struct TimeLineLikeOrCotentsButtonViewModel:ImageForCellProtocol {
+    
+    var image: UIImage
+   
+    
+    init?(indata:TimeLine,my:UIButton) {
+        
+        guard let imageString =  indata.writerImage else { return nil }
+        //킹피숴 대체해야함
+        self.image = UIImage(named:imageString)!
+      
+        
+    }
+}
 
 
 

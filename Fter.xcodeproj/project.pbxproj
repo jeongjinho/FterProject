@@ -58,6 +58,10 @@
 		7B8C28D91EFEA7C500E5ECF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8C28D71EFEA7C500E5ECF7 /* LaunchScreen.storyboard */; };
 		7B8C28E41EFEA7C600E5ECF7 /* FterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28E31EFEA7C600E5ECF7 /* FterTests.swift */; };
 		7B8C28EF1EFEA7C600E5ECF7 /* FterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8C28EE1EFEA7C600E5ECF7 /* FterUITests.swift */; };
+		7BF69D011F054D680018E09F /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D001F054D680018E09F /* CategoryVC.swift */; };
+		7BF69D051F054ED20018E09F /* CategoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D041F054ED20018E09F /* CategoryTableViewDataSource.swift */; };
+		7BF69D081F05501A0018E09F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D071F05501A0018E09F /* CategoryCell.swift */; };
+		7BF69D0A1F055F310018E09F /* DefaultNavibar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D091F055F310018E09F /* DefaultNavibar.swift */; };
 		958FBB48270314B5ADD531FC /* Pods_FterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DBC4F0BFBEA3A30D01060A /* Pods_FterTests.framework */; };
 		F816AB298E82D5C4A74A53BF /* Pods_Fter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9AE086120DE27A3AD151BE /* Pods_Fter.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +145,10 @@
 		7B8C28EA1EFEA7C600E5ECF7 /* FterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8C28EE1EFEA7C600E5ECF7 /* FterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FterUITests.swift; sourceTree = "<group>"; };
 		7B8C28F01EFEA7C600E5ECF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BF69D001F054D680018E09F /* CategoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		7BF69D041F054ED20018E09F /* CategoryTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewDataSource.swift; sourceTree = "<group>"; };
+		7BF69D071F05501A0018E09F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		7BF69D091F055F310018E09F /* DefaultNavibar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavibar.swift; sourceTree = "<group>"; };
 		8BB56287E2D68C51B19E3C66 /* Pods-FterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FterTests/Pods-FterTests.release.xcconfig"; sourceTree = "<group>"; };
 		A5C18AB490F3942AFD96B1B1 /* Pods-FterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FterTests/Pods-FterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF07E3F257A705DEC1B229A /* Pods-FterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FterUITests/Pods-FterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +283,7 @@
 			children = (
 				7B8170421EFFAC5200489D2C /* NavigationAtt.swift */,
 				7B61DCBC1F027301007C7E55 /* FterNavigation.swift */,
+				7BF69D091F055F310018E09F /* DefaultNavibar.swift */,
 			);
 			name = NavigationBar;
 			sourceTree = "<group>";
@@ -544,8 +553,9 @@
 				7B61DCBB1F02714E007C7E55 /* Map */,
 				7B0120BD1F0302B400E9B28F /* Card */,
 				7B028CE41F0394B800CE73F8 /* LookPost */,
-				7B8170501EFFCC4200489D2C /* StoryBoard */,
 				7B028CFE1F0436CF00CE73F8 /* AllReply */,
+				7BF69D021F054D6E0018E09F /* Categoty */,
+				7B8170501EFFCC4200489D2C /* StoryBoard */,
 				7B8170511EFFCC4B00489D2C /* Resource */,
 			);
 			path = Fter;
@@ -567,6 +577,32 @@
 				7B8C28F01EFEA7C600E5ECF7 /* Info.plist */,
 			);
 			path = FterUITests;
+			sourceTree = "<group>";
+		};
+		7BF69D021F054D6E0018E09F /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				7BF69D061F054FFD0018E09F /* VC */,
+				7BF69D031F054EA50018E09F /* CategoryDelegate */,
+				7BF69D071F05501A0018E09F /* CategoryCell.swift */,
+			);
+			name = Categoty;
+			sourceTree = "<group>";
+		};
+		7BF69D031F054EA50018E09F /* CategoryDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7BF69D041F054ED20018E09F /* CategoryTableViewDataSource.swift */,
+			);
+			name = CategoryDelegate;
+			sourceTree = "<group>";
+		};
+		7BF69D061F054FFD0018E09F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7BF69D001F054D680018E09F /* CategoryVC.swift */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 		8612E16AD3FDE2C75D92F885 /* Pods */ = {
@@ -876,6 +912,7 @@
 				7B8170531EFFCC7000489D2C /* MainTimeLineVC.swift in Sources */,
 				7B61DCC11F02ADEF007C7E55 /* ReplyExtension.swift in Sources */,
 				7B61DCA81F017E66007C7E55 /* TimeLineVM.swift in Sources */,
+				7BF69D0A1F055F310018E09F /* DefaultNavibar.swift in Sources */,
 				7B81704E1EFFBA7700489D2C /* Utility.swift in Sources */,
 				7B81703F1EFFAAB800489D2C /* DefaultButtonVM.swift in Sources */,
 				7B028CFD1F0436C100CE73F8 /* AllReplyVC.swift in Sources */,
@@ -889,12 +926,14 @@
 				7B0120BA1F03019100E9B28F /* AdvertisingDelegate.swift in Sources */,
 				7B61DCB61F0239F9007C7E55 /* AdvertisingFlowLayoutDelegate.swift in Sources */,
 				7B63B4A81F0106C80041156E /* PostingVC.swift in Sources */,
+				7BF69D011F054D680018E09F /* CategoryVC.swift in Sources */,
 				7B61DCB41F0231BE007C7E55 /* AdvertisingVM.swift in Sources */,
 				7B61DCBA1F02713D007C7E55 /* MapVC.swift in Sources */,
 				7B8170561EFFCDEC00489D2C /* SegmentControllAtt.swift in Sources */,
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
 				7B028CED1F03E14500CE73F8 /* CirCleTextView.swift in Sources */,
 				7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */,
+				7BF69D081F05501A0018E09F /* CategoryCell.swift in Sources */,
 				7B61DCBF1F02A646007C7E55 /* AdvertisingExtension.swift in Sources */,
 				7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */,
 				7B0120BF1F03855000E9B28F /* ImageCollectionDataSource.swift in Sources */,
@@ -904,6 +943,7 @@
 				7B5B57FF1F00A82800944004 /* CellViewModel.swift in Sources */,
 				7B61DCA61F0173AE007C7E55 /* ReplyVM.swift in Sources */,
 				7B028CE31F0394B300CE73F8 /* LookPostVC.swift in Sources */,
+				7BF69D051F054ED20018E09F /* CategoryTableViewDataSource.swift in Sources */,
 				7B028CF91F03FD7200CE73F8 /* ReplyWindow.swift in Sources */,
 				7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */,
 				7B0120C21F038D0100E9B28F /* ImageCollectionDelegate.swift in Sources */,

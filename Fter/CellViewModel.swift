@@ -70,6 +70,7 @@ protocol ImageForCellProtocol {
     
     var image: UIImage {get}
     var alpha: Float {get}
+    var contentMode: UIViewContentMode {get}
 }
 
 extension ImageForCellProtocol{
@@ -87,6 +88,11 @@ extension ImageForCellProtocol{
     
     
     return 0
+    }
+    
+    var contentMode: UIViewContentMode{
+    
+     return .scaleAspectFill
     }
 }
 

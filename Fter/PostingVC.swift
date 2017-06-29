@@ -20,6 +20,9 @@ class PostingVC: UIViewController {
         self.initialNaiBar()
     }
 
+    @IBAction func touchUpInsideBackButton(_ sender: Any) {
+        self.dismiss(animated:true, completion:nil)
+    }
     
     
     

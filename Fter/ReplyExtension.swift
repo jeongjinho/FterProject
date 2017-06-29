@@ -25,5 +25,26 @@ extension UIButton{
         self.imageView?.contentMode = .scaleAspectFill
     }
 }
-
+extension UILabel{
+    func configureReplyLabel(_ viewModel: TextForCellProtocol) {
+        
+        self.text = viewModel.title
+        
+        self.textColor = viewModel.textColor
+        //        self.numberOfLines = 0
+        //        self.lineBreakMode = .byWordWrapping
+        
+    }
+    
+    func configureAllReplyLabel(_ viewModel: TextForCellProtocol) {
+        
+        self.text = viewModel.title
+        
+        self.textColor = viewModel.textColor
+                self.numberOfLines = 0
+                self.lineBreakMode = .byWordWrapping
+        
+        
+    }
+}
 

@@ -24,6 +24,16 @@ class ReplyCell: UITableViewCell {
         self.replyVM = model
         configureReply()
         //configureReplyTime()
+        self.replyTimeLabel.isHidden = true
+        configureReplyerName()
+        configureReplyerImageButoon()
+        
+    }
+    func contfigureAllReplyVC(_ model: Reply )  {
+        
+        self.replyVM = model
+        configureAllReply()
+        configureReplyTime()
         configureReplyerName()
         configureReplyerImageButoon()
         
@@ -37,7 +47,14 @@ class ReplyCell: UITableViewCell {
     func configureReply() {
         let vm = ReplyViewModel(indata:replyVM!)
         
+      
         self.replyLabel.configureReplyLabel(vm!)
+    }
+    func configureAllReply() {
+        let vm = ReplyViewModel(indata:replyVM!)
+        
+        
+        self.replyLabel.configureAllReplyLabel(vm!)
     }
     func configureReplyTime() {
         let vm = ReplyTimeViewModel(indata:replyVM!)

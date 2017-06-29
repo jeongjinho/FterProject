@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="301" height="193"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇdsdsdsdsdsdsds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="772-Gc-rga">
-                                <rect key="frame" x="27" y="140.5" width="174" height="21.5"/>
+                                <rect key="frame" x="20" y="140.5" width="181" height="21.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="772-Gc-rga" secondAttribute="trailing" constant="100" id="4Uj-jc-kwR"/>
-                            <constraint firstItem="772-Gc-rga" firstAttribute="leading" secondItem="zg7-VW-N5p" secondAttribute="leading" constant="27" id="Wvt-h8-3QV"/>
+                            <constraint firstItem="772-Gc-rga" firstAttribute="leading" secondItem="zg7-VW-N5p" secondAttribute="leading" constant="20" id="Wvt-h8-3QV"/>
                             <constraint firstAttribute="bottom" secondItem="772-Gc-rga" secondAttribute="bottom" constant="31" id="rzq-GX-Hzv"/>
                         </constraints>
                     </view>

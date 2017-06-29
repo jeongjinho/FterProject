@@ -18,7 +18,13 @@ class ReplyWindow: UIView{
     }
     
   
-    @IBAction func touchUpInsideVariableButton(_ sender: Any) {
+    @IBAction func touchUpInsideVariableButton(_ sender: UIButton) {
+        if sender.isSelected {
+            
+         sender.isSelected = false
+        } else{
+        sender.isSelected = true
+        }
     }
     
     
@@ -29,6 +35,10 @@ class ReplyWindow: UIView{
         return true
     }
     func setDelegate(vc:LookPostVC)  {
+        
+        self.inputTextView.delegate = vc
+    }
+    func setDelegateAllReplyVC(vc: AllReplyVC)  {
         
         self.inputTextView.delegate = vc
     }

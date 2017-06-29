@@ -42,19 +42,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPv-2G-bX4">
+                        <rect key="frame" x="106" y="26" width="175" height="12"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Q3T-Zu-RLx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7GB-Z3-DZt"/>
+                    <constraint firstItem="OPv-2G-bX4" firstAttribute="leading" secondItem="Lt7-vH-McP" secondAttribute="leading" id="ARu-OT-etB"/>
                     <constraint firstItem="Lt7-vH-McP" firstAttribute="top" secondItem="PxV-ha-c8m" secondAttribute="top" id="Uc2-Ol-bu3"/>
                     <constraint firstItem="PxV-ha-c8m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="VrK-7c-xAr"/>
                     <constraint firstItem="Q3T-Zu-RLx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="W7W-SQ-dKb"/>
                     <constraint firstItem="PxV-ha-c8m" firstAttribute="centerY" secondItem="Q3T-Zu-RLx" secondAttribute="centerY" id="Xqz-UN-5Ns"/>
                     <constraint firstItem="PxV-ha-c8m" firstAttribute="leading" secondItem="Q3T-Zu-RLx" secondAttribute="trailing" constant="11" id="ffP-el-TXn"/>
                     <constraint firstItem="Lt7-vH-McP" firstAttribute="leading" secondItem="PxV-ha-c8m" secondAttribute="trailing" constant="28" id="hI0-kT-0O8"/>
+                    <constraint firstItem="OPv-2G-bX4" firstAttribute="trailing" secondItem="Lt7-vH-McP" secondAttribute="trailing" id="nei-1E-gem"/>
+                    <constraint firstItem="OPv-2G-bX4" firstAttribute="top" secondItem="Lt7-vH-McP" secondAttribute="bottom" id="sRC-Qc-1qv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="replyLabel" destination="Lt7-vH-McP" id="QRQ-e9-XWo"/>
+                <outlet property="replyTimeLabel" destination="OPv-2G-bX4" id="3EA-Kj-0Uo"/>
                 <outlet property="replyerButton" destination="Q3T-Zu-RLx" id="PGn-VQ-whV"/>
                 <outlet property="replyerNameButton" destination="PxV-ha-c8m" id="UeU-az-FH7"/>
             </connections>

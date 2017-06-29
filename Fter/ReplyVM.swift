@@ -39,13 +39,13 @@ struct ReplyViewModel:TextForCellProtocol {
 struct ReplyTimeViewModel:TextForCellProtocol {
     
     var title: String
-    
+    var textColor: UIColor
     
     init?(indata:Reply) {
         
         guard let titleString =  indata.replyTime else { return nil }
         self.title = titleString
-        
+        self.textColor = AppColors.GrayColor
     }
 }
 

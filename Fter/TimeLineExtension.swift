@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 
-extension UITextView{
+extension UILabel{
     func configurePostTextView(_ viewModel: TextForCellProtocol) {
         
         self.text = viewModel.title
         print("\(self.text)")
         self.textColor = viewModel.textColor
-        self.isEditable = false
-        self.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.numberOfLines = 3
+        self.lineBreakMode = .byWordWrapping
     }
     
     
@@ -27,15 +27,7 @@ extension UITextView{
 
 
 extension UILabel{
-    func configureReplyLabel(_ viewModel: TextForCellProtocol) {
-        
-        self.text = viewModel.title
-        
-        self.textColor = viewModel.textColor
-//        self.numberOfLines = 0
-//        self.lineBreakMode = .byWordWrapping
-        
-    }
+   
     
     func configureTimeLineLabel(_ viewModel: TextForCellProtocol) {
         print(viewModel.title)
@@ -60,9 +52,11 @@ extension UIButton{
         
             self.setBackgroundImage(viewModel.image, for: .normal)
             self.layer.cornerRadius = viewModel.radious
+            
         // print("\(self.text)")
       
-        
+        self.contentHorizontalAlignment = UIControlContentHorizontalAlignment.fill
+        self.contentVerticalAlignment = UIControlContentVerticalAlignment.fill;
     }
    
     
