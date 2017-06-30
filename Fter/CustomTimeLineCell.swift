@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDelegate {
+class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDelegate,ProfileCallBack{
 
     @IBOutlet weak var likeButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var ImageCollecHeightConstraint: NSLayoutConstraint!
@@ -61,8 +61,8 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         self.postTextView.isUserInteractionEnabled = true
     
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
-        postTextView.addGestureRecognizer(tapGestureRecognizer)
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+//        postTextView.addGestureRecognizer(tapGestureRecognizer)
         
         let str = postTextView!.text!
         let range = (str as NSString).range(of: moreText, options: .backwards)
@@ -103,64 +103,6 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
        
     }
     
-    func tapGesture(gestureRecognizer:UIGestureRecognizer) {
-        
-        guard let txt = self.postTextView.text else { return  }
-        let touchPoint = gestureRecognizer.location(in:self.postTextView)
-        let txtStorage = NSTextStorage(attributedString: NSAttributedString(string: moreText))
-        let layoutManager = NSLayoutManager()
-        txtStorage.addLayoutManager(layoutManager)
-        let  txtContainer = NSTextContainer(size: postTextView.frame.size)
-        layoutManager.addTextContainer(txtContainer)
-        txtContainer.lineBreakMode = .byWordWrapping
-        txtContainer.lineFragmentPadding = 0
-            let range = (txt as NSString).range(of:moreText)
-        let toRage = (txt as NSString).range(of: moreText)
-        let glyphRange = layoutManager.glyphRange(forCharacterRange:range, actualCharacterRange: nil)
-        let glyphRect = layoutManager.boundingRect(forGlyphRange: glyphRange, in: txtContainer)
-        print(glyphRect)
-        print(touchPoint)
-       
-        print(self.Point)
-        let sse = CGFloat(self.postTextView.numberOfLines)
-        let ss = self.postTextView.frame.size.width / sse
-        print(ss)
-        
-         let size: CGSize = postTextView.text!.size(attributes: [NSFontAttributeName: UIFont(name: "Helvetica", size: 12.0)!])
-         var seeee = (size.width / sse) - self.postTextView.frame.size.width
-        
-        
-        var chas: CGFloat
-        if(seeee < 0 ){
-        
-         chas =  seeee
-        } else{
-            chas = -seeee
-
-        }
-             print(chas)
-        if(ss + 30   <= touchPoint.x  ){
-            
-            print(self.postTextView.frame.size.width)
-            print(touchPoint.x)
-            
-            if(self.postTextView.frame.size.width   >= touchPoint.x  ){
-            
-           
-                if(chas >= 0.0 || self.postTextView.frame.size.width   >= touchPoint.x){
-                      //  print("tap")
-                    
-                    print(Int(chas))
-                    if(self.postTextView.frame.size.width   >= touchPoint.x - chas - 30  ){
-                         
-                        print("tap")
-
-                    }
-                }
-            }
-        
-        }
-    }
     
     func contfigureOnePost(_ model: TimeLine, vc:LookPostVC)  {
         
@@ -199,11 +141,11 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         self.partButton.DefaultButton(style:.fillStyle, buttonVM: btnVM)
     
-       // if(self.timeLineVM?.uploadedImage?.count == 0){
+        if(self.timeLineVM?.uploadedImage?.count == 0){
         
             self.ImageCollecHeightConstraint.constant = 0
             self.likeButtonTopConstraint.constant = 0
-    //    }
+        }
     
     }
 
@@ -301,6 +243,34 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     
     
     
+    @IBAction func touchUpInsideProfileButton(_ sender: Any) {
+        
+
+         let mainVC = ProfileInfoVC(nibName:"ProfileInfoVC", bundle:nil)
+        
+        mainVC.view.frame = UIScreen.main.bounds
+        
+        if self.vc != nil {
+            self.vc?.addChildViewController(mainVC)
+            self.vc?.view.addSubview(mainVC.view)
+            mainVC.didMove(toParentViewController: self.vc)
+        }else {
+         self.onePostVC?.addChildViewController(mainVC)
+            self.onePostVC?.view.addSubview(mainVC.view)
+            mainVC.didMove(toParentViewController: self.onePostVC)
+        }
+        
+        mainVC.getProfileInfoDelegate(callback:self)
+        
+        
+        
+    }
+    
+        
+              
+       
+        
+    
     
     
     
@@ -349,5 +319,20 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         replyView.setFromVC(vc: self.onePostVC!)
         return footerView
     }
-    
+
+    //profileCallback
+    func cancel(isCancel: Bool) {
+        if(isCancel == true){
+        DispatchQueue.background(delay: 0.2, background:nil, completion: {
+            
+            guard let backVC = self.vc else { return (self.onePostVC!.view.subviews.last?.removeFromSuperview())!  }
+            
+            backVC.view.subviews.last?.removeFromSuperview()
+        })
+           
+        }
 }
+
+
+}
+
