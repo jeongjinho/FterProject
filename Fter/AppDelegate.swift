@@ -14,9 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
     var window: UIWindow?
     var getId: String = ""
     func networkFailed() {
-        
     
-        
     }
     
     func networkResult(resultData: Any, code: String) {

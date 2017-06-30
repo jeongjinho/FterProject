@@ -193,11 +193,11 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(feelButton.frame.height/2), backgroundColor: .white)
         
-        self.feelButton.configureButton(style:.fillStyle, buttonVM: btnVM)
+        self.feelButton.DefaultButton(style:.fillStyle, buttonVM: btnVM)
         
         
         
-        self.partButton.configureButton(style:.fillStyle, buttonVM: btnVM)
+        self.partButton.DefaultButton(style:.fillStyle, buttonVM: btnVM)
     
        // if(self.timeLineVM?.uploadedImage?.count == 0){
         

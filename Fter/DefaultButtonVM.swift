@@ -127,7 +127,7 @@ class ButtonViewModel:BorderProtocol,TextProtocol,BackViewProtocol{
 
 extension UIButton {
 
-    func configureButton(style:ButtonStyle, buttonVM:ButtonViewModel){
+    func DefaultButton(style:ButtonStyle, buttonVM:ButtonViewModel){
         
         
         

@@ -10,13 +10,31 @@ import UIKit
 
 class ProfileInfoVC: UIViewController {
 
+    @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var InfoView: UIView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initialButton()
         // Do any additional setup after loading the view.
     }
 
+    func initialButton()  {
+        let cancelBtnVM = ButtonViewModel.init(fontColor:AppColors.GrayColor2, text: "안녕", borderColor: AppColors.GrayColor, borderWidth: 5, borderRadius:Float(cancelButton.frame.height/2), backgroundColor: .white)
+        
+        cancelButton.DefaultButton(style:.borderStyle, buttonVM: cancelBtnVM)
+        
+         let followBtnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 5, borderRadius:Float(cancelButton.frame.height/2), backgroundColor: .white)
+        
+        followButton.DefaultButton(style: .fillStyle, buttonVM: followBtnVM)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

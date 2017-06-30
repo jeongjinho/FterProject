@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,NetworkingCallBack{
+    @IBOutlet weak var nickNameTextField: UnderlineTextField!
+    @IBOutlet weak var stateMessageTextField: UnderlineTextField!
     let imagePicker = UIImagePickerController()
      var menuPickerView = UIPickerView()
     var menuData = ["경영/마케팅","개발","디자인"]
-
+    var nickCheck: String = ""
+    var rightButton: UIButton = UIButton()
     @IBOutlet weak var profilePhotoButton: UIButton!
     @IBOutlet weak var partTextField: UITextField!
   
@@ -23,12 +26,12 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
       //  self.menuArray ={"경영/마케팅"}
         initialNaViBar()
         initialButton()
-        
+        setStateTextField()
         
         
         let leftView = UIView()
         leftView.frame = CGRect(x:0, y: 0, width:15, height: 40)
-             partTextField.leftViewMode = .always
+        partTextField.leftViewMode = .always
         partTextField.leftView = leftView
       //~~~~~~~~~~
         let rightImageView = UIImageView()
@@ -63,7 +66,7 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
     func initialButton() {
         let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(completeButton.frame.height/2), backgroundColor: .white)
         
-        self.completeButton.configureButton(style:.fillStyle, buttonVM: btnVM)
+        self.completeButton.DefaultButton(style:.fillStyle, buttonVM: btnVM)
     }
     
     func initialNaViBar()  {
@@ -113,4 +116,54 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    func setStateTextField(){
+    
+        
+        
+        rightButton.setTitle("중복확인", for: .normal)
+        rightButton.titleLabel?.font = UIFont(name:"HelveticaNeue-Bold", size: 12.0)!
+        rightButton.setTitleColor(UIColor.black, for:.normal)
+        rightButton.backgroundColor = UIColor.clear
+        let rightView = UIView()
+        rightView.addSubview(rightButton)
+        
+        rightView.frame = CGRect(x: partTextField.frame.size.width-80, y: 0, width: 80, height: 40)
+        rightButton.frame = CGRect(x: 15, y:8, width:80, height: 20)
+        nickNameTextField.rightViewMode = .always
+        nickNameTextField.rightView = rightView
+        
+        rightButton.addTarget(self, action: #selector(pressButton(button:)), for: .touchUpInside)
+      
+    
+    }
+    
+    func pressButton(button: UIButton) {
+        
+     let checkname = self.nickNameTextField.text
+        if(checkname != ""){
+            CheckNicknameNM(self).checkNicknameNetworking(nickName:checkname!)
+        }
+        
+            
+    }
+    
+    func networkResult(resultData: Any, code: String) {
+        
+        self.nickCheck = resultData as! String
+        if(self.nickCheck == "true"){
+        
+        self.nickNameTextField.textColor = AppColors.PupleColor
+        } else if(self.nickCheck == "false"){
+            
+        self.nickNameTextField.textColor = AppColors.pinkColor
+        }
+        
+    }
+    func networkFailed() {
+        print("실패")
+    }
+    
+    
 }

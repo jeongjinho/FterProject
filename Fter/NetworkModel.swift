@@ -14,7 +14,7 @@ class NetwokrModel : NetworkingCallBack {
     
     
     //internal -  앱, 모듈, 프레임워크의 내부구조를 칭할때
-     let baseURL = "https://openapi.naver.com/v1/search/movie.json"
+   let baseURL = "http://52.78.166.21:3000/login/"
     
     var view : NetworkingCallBack
     

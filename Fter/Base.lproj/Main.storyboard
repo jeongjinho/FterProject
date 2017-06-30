@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Jg-5I-wT0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="idP-3L-r7o">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMK-Ra-T3E">
-                                <rect key="frame" x="65" y="498" width="284" height="40"/>
+                                <rect key="frame" x="65" y="542" width="284" height="40"/>
                                 <state key="normal" backgroundImage="kakaotalkImage">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loginiller" translatesAutoresizingMaskIntoConstraints="NO" id="FlF-qz-6Dt">
-                                <rect key="frame" x="75" y="310" width="264" height="151"/>
+                                <rect key="frame" x="75" y="354" width="264" height="151"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W7-Uq-6mW">
-                                <rect key="frame" x="65" y="556" width="284" height="40"/>
+                                <rect key="frame" x="65" y="600" width="284" height="40"/>
                                 <state key="normal" backgroundImage="facebookImage"/>
                                 <connections>
                                     <action selector="loginFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2k-L2-O68"/>
@@ -83,7 +83,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태 메세지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBv-Fj-b0h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBv-Fj-b0h">
                                 <rect key="frame" x="33" y="176" width="60" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RBv-Fj-b0h" secondAttribute="height" multiplier="15:4" id="lFi-tr-0s6"/>
@@ -92,7 +92,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-7m-R0u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태메세지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-7m-R0u">
                                 <rect key="frame" x="33" y="213" width="60" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -161,7 +161,7 @@
                                     <constraint firstAttribute="width" constant="94" id="Qo2-C8-fq0"/>
                                     <constraint firstAttribute="height" constant="89" id="Z4f-JC-q7r"/>
                                 </constraints>
-                                <state key="normal" image="DefaultProfile"/>
+                                <state key="normal" image="defaultImg"/>
                                 <connections>
                                     <action selector="touchUpInsidePhotoButton:" destination="idP-3L-r7o" eventType="touchUpInside" id="dX7-aY-zdb"/>
                                 </connections>
@@ -212,13 +212,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="completeButton" destination="4aL-vB-Dl4" id="PFx-5s-aG3"/>
+                        <outlet property="nickNameTextField" destination="WD5-M8-pxT" id="RQp-EM-dTn"/>
                         <outlet property="partTextField" destination="ssN-Ra-uOT" id="BRg-Ro-Ng7"/>
                         <outlet property="profilePhotoButton" destination="ha1-1j-0mZ" id="nUj-EV-dVo"/>
+                        <outlet property="stateMessageTextField" destination="WcA-J8-YkX" id="GlK-GA-SCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3I-1p-X98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803.75" y="137.32394366197184"/>
+            <point key="canvasLocation" x="1802.8985507246377" y="136.95652173913044"/>
         </scene>
         <!--Main Time LineVC-->
         <scene sceneID="e82-9h-MOI">
@@ -1118,9 +1120,9 @@
     <resources>
         <image name="6" width="617" height="310"/>
         <image name="Back" width="8" height="14"/>
-        <image name="DefaultProfile" width="96" height="91"/>
         <image name="Loginiller" width="226" height="151"/>
         <image name="Splash" width="125" height="222"/>
+        <image name="defaultImg" width="99" height="90"/>
         <image name="down" width="15" height="15"/>
         <image name="facebookImage" width="245" height="40"/>
         <image name="kakaotalkImage" width="245" height="40"/>
