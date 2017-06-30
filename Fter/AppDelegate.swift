@@ -9,10 +9,39 @@
 import UIKit
 import FBSDKLoginKit
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
 
     var window: UIWindow?
-
+    var getId: String = ""
+    func networkFailed() {
+        
+    
+        
+    }
+    
+    func networkResult(resultData: Any, code: String) {
+        
+        print("성공")
+        let flag = resultData as! String
+            let root = self.window?.rootViewController
+        if(flag == "old"){
+           
+           
+                
+              UserDefaults.standard.setValue(self.getId, forKey:"ID")
+            self.window?.rootViewController = root?.storyboard?.instantiateViewController(withIdentifier:"MainTimeLineVC")
+           
+            
+           
+        } else if(flag != "old"){
+            UserDefaults.standard.setValue(self.getId, forKey:"ID")
+          self.window?.rootViewController = root
+            
+        }
+        
+     self.window?.makeKeyAndVisible()
+        
+    }
 
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -20,7 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+            
+        
+       // self.window = UIWindow(frame: UIScreen.main.bounds)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+      
+        if( UserDefaults.standard.object(forKey:"ID") != nil){
+            getId = UserDefaults.standard.object(forKey:"ID") as! String
+            
+        }
+        
+        
+        LoginNetworkModel(self).getUserLoginInfo(id:getId)
         return true
         
     }

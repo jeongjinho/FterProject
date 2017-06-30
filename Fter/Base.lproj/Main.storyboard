@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87v-G6-zpx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Jg-5I-wT0">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMK-Ra-T3E">
-                                <rect key="frame" x="65" y="542" width="284" height="40"/>
+                                <rect key="frame" x="65" y="498" width="284" height="40"/>
                                 <state key="normal" backgroundImage="kakaotalkImage">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loginiller" translatesAutoresizingMaskIntoConstraints="NO" id="FlF-qz-6Dt">
-                                <rect key="frame" x="75" y="354" width="264" height="151"/>
+                                <rect key="frame" x="75" y="310" width="264" height="151"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W7-Uq-6mW">
-                                <rect key="frame" x="65" y="600" width="284" height="40"/>
+                                <rect key="frame" x="65" y="556" width="284" height="40"/>
                                 <state key="normal" backgroundImage="facebookImage"/>
                                 <connections>
                                     <action selector="loginFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2k-L2-O68"/>
@@ -737,6 +737,25 @@
             </objects>
             <point key="canvasLocation" x="6594.202898550725" y="1765.7608695652175"/>
         </scene>
+        <!--LauchVC-->
+        <scene sceneID="BQd-0z-Mbg">
+            <objects>
+                <viewController id="ZDg-E8-ZsB" customClass="LauchVC" customModule="Fter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s7g-o8-PVH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yer-nU-LO5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5wd-Bu-qQo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xU6-W0-bND"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3J-es-qUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-625" y="139"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1gJ-2Y-ZNG">
             <objects>
@@ -749,7 +768,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wff-0B-s1p"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZiN-Op-yN4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tO3-xL-ugd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1076,13 +1095,12 @@
         <!--Fter Navigation-->
         <scene sceneID="O9a-eX-Gpv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UlO-gU-VE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mbf-xr-2xz" customClass="FterNavigation" customModule="Fter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="" image="tap3" selectedImage="tap3select" id="fZO-20-2Rp">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="z7t-v5-JWC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="z7t-v5-JWC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1092,6 +1110,7 @@
                         <segue destination="7qp-aw-eYa" kind="relationship" relationship="rootViewController" id="q0m-c2-4jU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UlO-gU-VE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3137.68115942029" y="1867.663043478261"/>
         </scene>

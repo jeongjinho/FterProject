@@ -62,6 +62,11 @@
 		7BF69D051F054ED20018E09F /* CategoryTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D041F054ED20018E09F /* CategoryTableViewDataSource.swift */; };
 		7BF69D081F05501A0018E09F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D071F05501A0018E09F /* CategoryCell.swift */; };
 		7BF69D0A1F055F310018E09F /* DefaultNavibar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D091F055F310018E09F /* DefaultNavibar.swift */; };
+		7BF69D111F057EB00018E09F /* ProfileInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D0F1F057EB00018E09F /* ProfileInfoVC.swift */; };
+		7BF69D121F057EB00018E09F /* ProfileInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF69D101F057EB00018E09F /* ProfileInfoVC.xib */; };
+		7BF69D141F0614860018E09F /* LauchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D131F0614860018E09F /* LauchVC.swift */; };
+		7BF69D161F0614F80018E09F /* LauchNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D151F0614F80018E09F /* LauchNetWork.swift */; };
+		7BF69D181F0622820018E09F /* FBLoginNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF69D171F0622820018E09F /* FBLoginNetwork.swift */; };
 		958FBB48270314B5ADD531FC /* Pods_FterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DBC4F0BFBEA3A30D01060A /* Pods_FterTests.framework */; };
 		F816AB298E82D5C4A74A53BF /* Pods_Fter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9AE086120DE27A3AD151BE /* Pods_Fter.framework */; };
 /* End PBXBuildFile section */
@@ -149,6 +154,11 @@
 		7BF69D041F054ED20018E09F /* CategoryTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewDataSource.swift; sourceTree = "<group>"; };
 		7BF69D071F05501A0018E09F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		7BF69D091F055F310018E09F /* DefaultNavibar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNavibar.swift; sourceTree = "<group>"; };
+		7BF69D0F1F057EB00018E09F /* ProfileInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoVC.swift; sourceTree = "<group>"; };
+		7BF69D101F057EB00018E09F /* ProfileInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileInfoVC.xib; sourceTree = "<group>"; };
+		7BF69D131F0614860018E09F /* LauchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchVC.swift; sourceTree = "<group>"; };
+		7BF69D151F0614F80018E09F /* LauchNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchNetWork.swift; sourceTree = "<group>"; };
+		7BF69D171F0622820018E09F /* FBLoginNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginNetwork.swift; sourceTree = "<group>"; };
 		8BB56287E2D68C51B19E3C66 /* Pods-FterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FterTests/Pods-FterTests.release.xcconfig"; sourceTree = "<group>"; };
 		A5C18AB490F3942AFD96B1B1 /* Pods-FterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FterTests/Pods-FterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF07E3F257A705DEC1B229A /* Pods-FterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FterUITests/Pods-FterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +317,7 @@
 		7B5B57F11F009C6F00944004 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				7BF69D0C1F057DD20018E09F /* ProfileInfoVC */,
 				7B61DCA91F01867A007C7E55 /* Cell */,
 				7B028CE91F03D98900CE73F8 /* ReplyWindow */,
 				7B028CF31F03EB1300CE73F8 /* ReplyMore */,
@@ -442,6 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				7B81703B1EFFAA5A00489D2C /* LoginVC.swift */,
+				7BF69D171F0622820018E09F /* FBLoginNetwork.swift */,
+				7BF69D151F0614F80018E09F /* LauchNetWork.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -487,6 +500,7 @@
 			children = (
 				7B8C28D21EFEA7C500E5ECF7 /* Main.storyboard */,
 				7B8C28D71EFEA7C500E5ECF7 /* LaunchScreen.storyboard */,
+				7BF69D131F0614860018E09F /* LauchVC.swift */,
 			);
 			name = StoryBoard;
 			sourceTree = "<group>";
@@ -603,6 +617,15 @@
 				7BF69D001F054D680018E09F /* CategoryVC.swift */,
 			);
 			name = VC;
+			sourceTree = "<group>";
+		};
+		7BF69D0C1F057DD20018E09F /* ProfileInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				7BF69D0F1F057EB00018E09F /* ProfileInfoVC.swift */,
+				7BF69D101F057EB00018E09F /* ProfileInfoVC.xib */,
+			);
+			name = ProfileInfoVC;
 			sourceTree = "<group>";
 		};
 		8612E16AD3FDE2C75D92F885 /* Pods */ = {
@@ -735,6 +758,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF69D121F057EB00018E09F /* ProfileInfoVC.xib in Resources */,
 				7B8C28D91EFEA7C500E5ECF7 /* LaunchScreen.storyboard in Resources */,
 				7B61DC9B1F015438007C7E55 /* CustomTimeLineCell.xib in Resources */,
 				7B8C28D61EFEA7C500E5ECF7 /*  .xcassets in Resources */,
@@ -933,6 +957,7 @@
 				7B81703C1EFFAA5A00489D2C /* LoginVC.swift in Sources */,
 				7B028CED1F03E14500CE73F8 /* CirCleTextView.swift in Sources */,
 				7B61DCB01F0230ED007C7E55 /* AdverTisingCell.swift in Sources */,
+				7BF69D161F0614F80018E09F /* LauchNetWork.swift in Sources */,
 				7BF69D081F05501A0018E09F /* CategoryCell.swift in Sources */,
 				7B61DCBF1F02A646007C7E55 /* AdvertisingExtension.swift in Sources */,
 				7B61DCBD1F027301007C7E55 /* FterNavigation.swift in Sources */,
@@ -946,9 +971,12 @@
 				7BF69D051F054ED20018E09F /* CategoryTableViewDataSource.swift in Sources */,
 				7B028CF91F03FD7200CE73F8 /* ReplyWindow.swift in Sources */,
 				7B8170491EFFADAE00489D2C /* NetworkingCallBack.swift in Sources */,
+				7BF69D181F0622820018E09F /* FBLoginNetwork.swift in Sources */,
 				7B0120C21F038D0100E9B28F /* ImageCollectionDelegate.swift in Sources */,
+				7BF69D141F0614860018E09F /* LauchVC.swift in Sources */,
 				7B8170411EFFABD700489D2C /* TextFieldAtt.swift in Sources */,
 				7B81705A1EFFF34A00489D2C /* CustomSegment.swift in Sources */,
+				7BF69D111F057EB00018E09F /* ProfileInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
