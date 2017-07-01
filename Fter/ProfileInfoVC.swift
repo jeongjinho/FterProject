@@ -38,10 +38,10 @@ class ProfileInfoVC: UIViewController {
         ree = InfoView.frame
     
         InfoView.alpha = 0
-        InfoView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        InfoView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         
         
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.15) {
             
             self.InfoView.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.InfoView.alpha = 1
@@ -84,9 +84,9 @@ class ProfileInfoVC: UIViewController {
         InfoView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
        
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             
-            self.InfoView.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+            self.InfoView.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
             self.InfoView.alpha = 0
             self.profileCallbck?.cancel(isCancel:self.isCancel)
         }) { (iscoplete) in

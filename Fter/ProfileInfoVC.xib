@@ -106,7 +106,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30227953767123289" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39988227739726029" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="TlF-N2-Kgg" secondAttribute="trailing" id="C3W-iP-mkv"/>
                 <constraint firstAttribute="bottom" secondItem="TlF-N2-Kgg" secondAttribute="bottom" id="ESQ-Aw-YWp"/>
