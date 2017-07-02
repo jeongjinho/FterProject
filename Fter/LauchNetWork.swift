@@ -90,6 +90,7 @@ class LoginNetworkModel : LauchNetworking{
                 
                 if let results = boardList.message {
                     print("!@#!@#")
+                    print(results)
                     self.view.networkResult(resultData: results, code: "1-1")
                 }
             case .failure(let err):

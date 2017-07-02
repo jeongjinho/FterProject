@@ -41,25 +41,11 @@ public class TimeLine:NSObject {
 }
 
 //  광고하나
- class AdverTising: NSObject{
-    
-    var adPhotoName:String?
-    var adTitle: String?
-    init(title:String,photos:String) {
-        adPhotoName = photos
-        adTitle = title
-    }
-}
 
 
-class UploadedImage: NSObject {
-    
-    var uploaded: String?
-    
-    init(imageName: String) {
-        self.uploaded = imageName
-    }
-}
+
+
+
 
 
 

@@ -19,6 +19,16 @@ class AllReplyVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     //@IBOutlet weak var menuSegment: DefaultSegment!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillShow),
+                                               name: Notification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillHide),
+                                               name: Notification.Name.UIKeyboardWillHide,
+                                               object: nil)
+        
         for subView in menuSegment.subviews {
             
             if(subView .isKind(of:UIButton.self) == true){
@@ -52,14 +62,7 @@ class AllReplyVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         self.replesTableView.rowHeight = UITableViewAutomaticDimension;
         self.replesTableView.estimatedRowHeight = 80.0;
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWillShow),
-                                               name: Notification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWillHide),
-                                               name: Notification.Name.UIKeyboardWillHide,
-                                               object: nil)
+       
     }
     
     func setReplyWindowView(){
@@ -160,7 +163,11 @@ class AllReplyVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         
     }
 
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil);
+    }
    
     @IBAction func touchUplnsideBackButton(_ sender: Any) {
         

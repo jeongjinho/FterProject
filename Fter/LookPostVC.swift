@@ -31,6 +31,14 @@ class LookPostVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     var arrayData:[TimeLine?]?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillShow),
+                                               name: Notification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillHide),
+                                               name: Notification.Name.UIKeyboardWillHide,
+                                               object: nil)
         
          
     }
@@ -45,14 +53,7 @@ class LookPostVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         setReplyWindowView()
   
    
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWillShow),
-                                               name: Notification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardWillHide),
-                                               name: Notification.Name.UIKeyboardWillHide,
-                                               object: nil)
+       
         
     }
     
@@ -141,11 +142,10 @@ class LookPostVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         // Dispose of any resources that can be recreated.
     }
     
-    deinit {
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil);
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil);
-        
     }
     
      @IBAction func touchUpInsidedBackButton(_ sender: Any) {

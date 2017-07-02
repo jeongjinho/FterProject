@@ -18,14 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="301" height="193"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbs-l4-Uzj">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MBS-WG-4KI">
                         <rect key="frame" x="0.0" y="0.0" width="301" height="193"/>
                     </imageView>
-                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-VW-N5p">
+                    <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-VW-N5p">
                         <rect key="frame" x="0.0" y="0.0" width="301" height="193"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇㄴㅇdsdsdsdsdsdsds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="772-Gc-rga">
-                                <rect key="frame" x="20" y="140.5" width="181" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="772-Gc-rga">
+                                <rect key="frame" x="20" y="162" width="181" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -38,24 +38,39 @@
                             <constraint firstAttribute="bottom" secondItem="772-Gc-rga" secondAttribute="bottom" constant="31" id="rzq-GX-Hzv"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ev-i2-SyW">
+                        <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="33" id="c6V-kH-yYJ"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="33" id="ljJ-lt-IO7"/>
+                        </constraints>
+                        <state key="normal" image="albumCheck"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="MBS-WG-4KI" secondAttribute="trailing" id="2iS-H3-SjY"/>
                 <constraint firstItem="zg7-VW-N5p" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3wj-V9-JA5"/>
+                <constraint firstItem="MBS-WG-4KI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8un-2n-iQw"/>
                 <constraint firstAttribute="bottom" secondItem="zg7-VW-N5p" secondAttribute="bottom" id="90g-wd-au7"/>
                 <constraint firstItem="zg7-VW-N5p" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9it-3w-ysL"/>
-                <constraint firstAttribute="trailing" secondItem="Qbs-l4-Uzj" secondAttribute="trailing" id="9k8-nO-9sJ"/>
-                <constraint firstItem="Qbs-l4-Uzj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="B8y-LM-ga6"/>
-                <constraint firstItem="Qbs-l4-Uzj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JWj-0v-MYh"/>
-                <constraint firstAttribute="bottom" secondItem="Qbs-l4-Uzj" secondAttribute="bottom" id="NEb-sP-onF"/>
+                <constraint firstItem="6Ev-i2-SyW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DDj-xu-Qel"/>
+                <constraint firstItem="6Ev-i2-SyW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NxN-rD-xKi"/>
+                <constraint firstAttribute="bottom" secondItem="MBS-WG-4KI" secondAttribute="bottom" id="bar-DS-SCe"/>
                 <constraint firstAttribute="trailing" secondItem="zg7-VW-N5p" secondAttribute="trailing" id="dzU-oM-kc8"/>
+                <constraint firstItem="MBS-WG-4KI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rpT-Em-pSy"/>
             </constraints>
             <size key="customSize" width="301" height="193"/>
             <connections>
-                <outlet property="advertisingImageView" destination="Qbs-l4-Uzj" id="c7g-LG-QdT"/>
+                <outlet property="advertisingImageView" destination="MBS-WG-4KI" id="fb2-6T-DzB"/>
                 <outlet property="advertisingTitle" destination="772-Gc-rga" id="Vhz-iK-bBP"/>
+                <outlet property="albumCheckButton" destination="6Ev-i2-SyW" id="fDf-Af-Vuv"/>
+                <outlet property="shadowView" destination="zg7-VW-N5p" id="ehc-Ue-VKj"/>
             </connections>
             <point key="canvasLocation" x="32.5" y="96.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="albumCheck" width="33" height="33"/>
+    </resources>
 </document>

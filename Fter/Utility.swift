@@ -95,6 +95,7 @@ class Utility {
         
         return string
     }
+    
 }
 // typealias AlertTypeHandler = ((UIAlertAction) ->Void)
 class DefaultAlert {
@@ -282,5 +283,9 @@ class BlockBarButtonItem: UIBarButtonItem {
         actionHandler?()
     }
 }
+
+
+
+
 
 

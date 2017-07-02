@@ -10,26 +10,84 @@ import UIKit
 
 class AdverTisingCell: UICollectionViewCell {
 
+    var representedAssetIdentifier: String?
     
+    @IBOutlet weak var albumCheckButton: UIButton!
+  
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var advertisingTitle: UILabel!
     @IBOutlet weak var advertisingImageView: UIImageView!
   
         var data: AdverTising?
     var uploadedImageData: UploadedImage?
-    
+    var selectPhoto: PhotoAlbumImage?
+       
+  //  override var isSelected: Bool {
+//        didSet {
+//            self.contentView.backgroundColor = isSelected ? UIColor.blue : UIColor.yellow
+//            self.albumCheckButton.isHidden = isSelected ? false : true
+//        }
+        
+
+        
+        
+//    }
+
     func configure(_ model:AdverTising) {
       
         self.data = model
         configurePhotoImage()
         confiugureAdTitle()
+        self.albumCheckButton.isHidden = true
     }
     
     func configureUploaded(_ model:UploadedImage) {
         
         self.uploadedImageData = model
         configureUploadedImage()
+        self.albumCheckButton.isHidden = true
+
+    }
+    
+    func configureSelectPhoto(_ model:PhotoAlbumImage,isSeleted:Bool) {
+        
+        self.selectPhoto = model
+        configureAlbum()
+        self.shadowView.isHidden = true
+        self.albumCheckButton.isHidden = true
+
+    }
+    func configureDeSelectPhoto(_ model:PhotoAlbumImage) {
+        
+        self.selectPhoto = model
+        configureAlbum()
+        self.shadowView.isHidden = true
+        self.albumCheckButton.isHidden = true
         
     }
+    
+    
+    
+//////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func configureAlbum(){
+        
+        
+        let vm = PhotoAlbumImageViewModel.init(indata:selectPhoto!)
+        
+        self.advertisingImageView.configureAdPhotosImage(vm!)
+        
+    }
+    
+    
     func configureUploadedImage(){
         
         
@@ -38,6 +96,8 @@ class AdverTisingCell: UICollectionViewCell {
         self.advertisingImageView.configureAdPhotosImage(vm!)
         
     }
+    
+    
     
     
     func configurePhotoImage(){

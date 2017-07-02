@@ -29,13 +29,14 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     var vc: MainTimeLineVC?
     var onePostVC : LookPostVC?
     var timeLineVM: TimeLine?
+   
     var replies: [Reply?]?
     var uploadedDelegate: ImageCollectionDelegate?
     // 더보기삽입 본문에
     var moreText = "...더보기"
     var Point :CGFloat?
     func contfigure(_ model: TimeLine, vc:MainTimeLineVC)  {
-        
+     
         self.timeLineVM = model
         self.vc = vc
         configureWriterImageView()
@@ -61,8 +62,6 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         self.postTextView.isUserInteractionEnabled = true
     
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
-//        postTextView.addGestureRecognizer(tapGestureRecognizer)
         
         let str = postTextView!.text!
         let range = (str as NSString).range(of: moreText, options: .backwards)
@@ -73,18 +72,6 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         
         print(postTextView.intrinsicContentSize.width)
                print(postTextView.isTruncated())
-//              postTextView.text = String(self.postTextView.text!.characters.dropLast(moreText.characters.count))
-//                         while  postTextView.isTruncated() {
-//                                let temp = self.postTextView.text!
-//                        postTextView.text = String(temp.characters.dropLast(moreText.characters.count))
-//                        print(postTextView.text)
-//        
-//        
-//                }
-//                postTextView.text = String(self.postTextView.text!.characters.dropLast(moreText.characters.count))
-//               
-//                let reduceSTr = "\(postTextView.text! + moreText)"
-//                print(reduceSTr)
         let ints = CGFloat(self.postTextView.numberOfLines + 1)
          let size =   postTextView.intrinsicContentSize.width / ints
         
@@ -105,7 +92,7 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
     
     
     func contfigureOnePost(_ model: TimeLine, vc:LookPostVC)  {
-        
+  
         self.timeLineVM = model
         self.onePostVC = vc
         configureWriterImageView()
@@ -128,9 +115,6 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         uploadedDelegate = ImageCollectionDelegate.init(lookPostVC:self.onePostVC!, data: (self.timeLineVM?.uploadedImage)!)
         self.imageCollectionView.delegate =  uploadedDelegate
         self.imageCollectionView.dataSource = uploadedDelegate
-        
-        
-        
         
         
         let btnVM = ButtonViewModel.init(fontColor:AppColors.PupleColor, text: "안녕", borderColor: AppColors.PupleColor, borderWidth: 3, borderRadius:Float(feelButton.frame.height/2), backgroundColor: .white)
@@ -305,7 +289,15 @@ class CustomTimeLineCell: UITableViewCell,UITableViewDataSource,UITableViewDeleg
         let replyCell = Bundle.main.loadNibNamed("ReplyCell", owner:self, options: nil)?.first as! ReplyCell
         if let data = self.replies?[indexPath.row] {
             
-            replyCell.contfigure(data)
+            if let current = self.vc{
+             replyCell.contfigureMainTime(data, vc: current)
+            
+            } else{
+             replyCell.contfigureLookPost(data, vc: onePostVC!)
+            
+            }
+            
+           
             
         }
         return replyCell

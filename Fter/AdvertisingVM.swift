@@ -9,7 +9,16 @@
 import UIKit
 
 
+class AdverTising: NSObject{
     
+    var adPhotoName:String?
+    var adTitle: String?
+    init(title:String,photos:String) {
+        adPhotoName = photos
+        adTitle = title
+        
+    }
+}
     
   
 struct AdImageViewModel:ImageForCellProtocol {
@@ -27,6 +36,15 @@ struct AdImageViewModel:ImageForCellProtocol {
             
         }
 }
+//////
+class UploadedImage: NSObject {
+    
+    var uploaded: String?
+    
+    init(imageName: String) {
+        self.uploaded = imageName
+    }
+}
 struct UploadImageViewModel:ImageForCellProtocol {
     
     var image: UIImage
@@ -42,7 +60,34 @@ struct UploadImageViewModel:ImageForCellProtocol {
         
     }
 }
+////////
+class PhotoAlbumImage: NSObject {
+    
+    var albumPhoto: UIImage?
+    
+    init(image: UIImage) {
+        self.albumPhoto = image
+    }
+}
 
+
+struct PhotoAlbumImageViewModel:ImageForCellProtocol {
+    
+    var image: UIImage
+    //var radious: CGFloat
+    
+    init?(indata:PhotoAlbumImage) {
+        
+        guard let image =  indata.albumPhoto else { return nil }
+        //킹피숴 대체해야함
+        
+        self.image = image
+        
+        
+    }
+}
+
+/////
 
 
 struct AdTitleViewModel:TextForCellProtocol {

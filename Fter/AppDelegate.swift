@@ -19,25 +19,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
     
     func networkResult(resultData: Any, code: String) {
         
-        print("성공")
-        let flag = resultData as! String
-            let root = self.window?.rootViewController
-        if(flag == "old"){
-           
-           
-                
-              UserDefaults.standard.setValue(self.getId, forKey:"ID")
-            self.window?.rootViewController = root?.storyboard?.instantiateViewController(withIdentifier:"MainTimeLineVC")
-           
-            
-           
-        } else if(flag != "old"){
-            UserDefaults.standard.setValue(self.getId, forKey:"ID")
-          self.window?.rootViewController = root
-            
-        }
-        
-     self.window?.makeKeyAndVisible()
+//        print("성공")
+//        let flag = resultData as! String
+//            let root = self.window?.rootViewController
+//        if(flag == "old"){
+//           
+//           
+//                
+//              UserDefaults.standard.setValue(self.getId, forKey:"ID")
+//          //  self.window?.rootViewController =
+//            
+//            
+//            let vc = root?.storyboard?.instantiateViewController(withIdentifier:"MainTimeLineVC") as! MainTimeLineVC
+//
+//            self.window?.rootViewController = vc
+//           
+//            
+//           
+//        } else if(flag != "old"){
+//            UserDefaults.standard.setValue(self.getId, forKey:"ID")
+//          self.window?.rootViewController = root
+//            
+//        }
+//        
+//     self.window?.makeKeyAndVisible()
         
     }
 
@@ -48,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
             
-        
+         getId = UserDefaults.standard.object(forKey:"ID") as! String 
        // self.window = UIWindow(frame: UIScreen.main.bounds)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
@@ -57,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
             getId = UserDefaults.standard.object(forKey:"ID") as! String
             
         }
-        
+        print(getId)
         
         LoginNetworkModel(self).getUserLoginInfo(id:getId)
         return true

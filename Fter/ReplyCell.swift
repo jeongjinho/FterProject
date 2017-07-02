@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReplyCell: UITableViewCell {
+class ReplyCell: UITableViewCell,ProfileCallBack {
 
     @IBOutlet weak var replyerNameButton: UIButton!
     @IBOutlet weak var replyTimeLabel: UILabel!
@@ -17,9 +17,10 @@ class ReplyCell: UITableViewCell {
     @IBOutlet weak var replyerButton: UIButton!
     
     var replyVM: Reply?
+    var mainVC: MainTimeLineVC?
+    var lookVC: LookPostVC?
     
-    
-    func contfigure(_ model: Reply )  {
+    func contfigureMainTime(_ model: Reply,vc:MainTimeLineVC )  {
         
         self.replyVM = model
         configureReply()
@@ -27,8 +28,24 @@ class ReplyCell: UITableViewCell {
         self.replyTimeLabel.isHidden = true
         configureReplyerName()
         configureReplyerImageButoon()
+        self.mainVC = vc
+        
         
     }
+    
+    func contfigureLookPost(_ model: Reply,vc:LookPostVC )  {
+        
+        self.replyVM = model
+        configureReply()
+        //configureReplyTime()
+        self.replyTimeLabel.isHidden = true
+        configureReplyerName()
+        configureReplyerImageButoon()
+        self.lookVC = vc
+        
+        
+    }
+    
     func contfigureAllReplyVC(_ model: Reply )  {
         
         self.replyVM = model
@@ -70,8 +87,43 @@ class ReplyCell: UITableViewCell {
     
     
     
+    @IBAction func touchUpInsideProfileButton(_ sender: UIButton) {
+        
+        let mainVC = ProfileInfoVC(nibName:"ProfileInfoVC", bundle:nil)
+        
+        mainVC.view.frame = UIScreen.main.bounds
+        
+        if self.mainVC != nil {
+            self.mainVC?.addChildViewController(mainVC)
+            self.mainVC?.view.addSubview(mainVC.view)
+            mainVC.didMove(toParentViewController: self.mainVC)
+            mainVC.getProfileInfoDelegate(callback:self)
+        }else {
+            self.lookVC?.addChildViewController(mainVC)
+            self.lookVC?.view.addSubview(mainVC.view)
+            mainVC.didMove(toParentViewController: self.lookVC)
+        }
+        
+        mainVC.getProfileInfoDelegate(callback:self)
+
+    }
   
     
-    
-    
+    func cancel(isCancel: Bool) {
+        if(isCancel == true){
+            DispatchQueue.background(delay: 0.2, background:nil, completion: {
+                
+                guard let backVC = self.mainVC else { return (self.lookVC!.view.subviews.last?.removeFromSuperview())!  }
+                
+                backVC.view.subviews.last?.removeFromSuperview()
+            })
+            
+        }
+    }
+
 }
+
+
+
+    
+

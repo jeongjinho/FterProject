@@ -25,6 +25,9 @@
                         <state key="normal" title="홍주영">
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="touchUpInsideProfileButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NXr-es-jBm"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3T-Zu-RLx">
                         <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
@@ -32,6 +35,9 @@
                             <constraint firstAttribute="height" constant="33" id="Kj4-7J-rj0"/>
                             <constraint firstAttribute="width" constant="33" id="zAp-DT-cLp"/>
                         </constraints>
+                        <connections>
+                            <action selector="touchUpInsideProfileButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EbY-Ff-p95"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lt7-vH-McP">
                         <rect key="frame" x="106" y="11" width="175" height="15"/>
