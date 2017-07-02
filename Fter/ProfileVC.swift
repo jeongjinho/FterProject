@@ -97,6 +97,13 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
         imagePicker.sourceType = .photoLibrary
          present(imagePicker, animated: true, completion: nil)
     }
+    @IBAction func touchUpInsideCompleteButton(_ sender: UIButton) {
+        
+        
+        LoginNM(self).signUpForUserInfo(id:"920908", nickname:"920908", part:"개발", statemessage:"첫 로그인", imageData:UIImage(named:"1"))
+        
+        
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -143,7 +150,7 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
         
      let checkname = self.nickNameTextField.text
         if(checkname != ""){
-            CheckNicknameNM(self).checkNicknameNetworking(nickName:checkname!)
+            LoginNM(self).checkNicknameNetworking(nickName:checkname!)
         }
         
             
@@ -151,14 +158,23 @@ class ProfileVC: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate,UI
     
     func networkResult(resultData: Any, code: String) {
         
-        self.nickCheck = resultData as! String
-        if(self.nickCheck == "true"){
+        if(code == "1-1"){
+            self.nickCheck = resultData as! String
+            if(self.nickCheck == "true"){
+                
+                self.nickNameTextField.textColor = AppColors.PupleColor
+            } else if(self.nickCheck == "false"){
+                
+                self.nickNameTextField.textColor = AppColors.pinkColor
+            }
         
-        self.nickNameTextField.textColor = AppColors.PupleColor
-        } else if(self.nickCheck == "false"){
+        } else if(code == "1-2"){
+        
+            let vc = self.storyboard?.instantiateViewController(withIdentifier:"TabBarVC")
             
-        self.nickNameTextField.textColor = AppColors.pinkColor
+            self.present(vc!, animated: true, completion: nil)
         }
+       
         
     }
     func networkFailed() {

@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
         }
         print(getId)
         
-        LoginNetworkModel(self).getUserLoginInfo(id:getId)
+     //   LoginNetworkModel(self).getUserLoginInfo(id:getId)
         return true
         
     }

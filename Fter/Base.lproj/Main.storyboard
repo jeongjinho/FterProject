@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="87v-G6-zpx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="idP-3L-r7o">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -125,6 +125,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 </variation>
                                 <connections>
+                                    <action selector="touchUpInsideCompleteButton:" destination="idP-3L-r7o" eventType="touchUpInside" id="qle-mF-gYt"/>
                                     <segue destination="87v-G6-zpx" kind="presentation" id="qNV-yM-NF7"/>
                                 </connections>
                             </button>
@@ -786,7 +787,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="VbH-oI-Ftq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="87v-G6-zpx" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="87v-G6-zpx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="SLD-Do-z4P">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
