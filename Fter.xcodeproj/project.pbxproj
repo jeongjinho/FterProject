@@ -31,6 +31,8 @@
 		7B5D78241F08BBD000378A10 /* ProfileNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D78231F08BBD000378A10 /* ProfileNetworkModel.swift */; };
 		7B5D78261F08BC5F00378A10 /* PHSelectionCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D78251F08BC5F00378A10 /* PHSelectionCallback.swift */; };
 		7B5D78281F08C15B00378A10 /* SelectionPHCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D78271F08C15B00378A10 /* SelectionPHCollectionDelegate.swift */; };
+		7B5D78661F091B6700378A10 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5D78651F091B6700378A10 /* KakaoOpenSDK.framework */; };
+		7B5D78691F0955E400378A10 /* KakaoLoginNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D78681F0955E400378A10 /* KakaoLoginNetwork.swift */; };
 		7B61DC9A1F015438007C7E55 /* CustomTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */; };
 		7B61DC9B1F015438007C7E55 /* CustomTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */; };
 		7B61DC9E1F016552007C7E55 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61DC9C1F016552007C7E55 /* ReplyCell.swift */; };
@@ -131,6 +133,9 @@
 		7B5D78231F08BBD000378A10 /* ProfileNetworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileNetworkModel.swift; sourceTree = "<group>"; };
 		7B5D78251F08BC5F00378A10 /* PHSelectionCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHSelectionCallback.swift; sourceTree = "<group>"; };
 		7B5D78271F08C15B00378A10 /* SelectionPHCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionPHCollectionDelegate.swift; sourceTree = "<group>"; };
+		7B5D78651F091B6700378A10 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		7B5D78671F09201000378A10 /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
+		7B5D78681F0955E400378A10 /* KakaoLoginNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoLoginNetwork.swift; sourceTree = "<group>"; };
 		7B61DC981F015438007C7E55 /* CustomTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimeLineCell.swift; sourceTree = "<group>"; };
 		7B61DC991F015438007C7E55 /* CustomTimeLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimeLineCell.xib; sourceTree = "<group>"; };
 		7B61DC9C1F016552007C7E55 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
@@ -199,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5D781B1F077D4300378A10 /* Photos.framework in Frameworks */,
+				7B5D78661F091B6700378A10 /* KakaoOpenSDK.framework in Frameworks */,
 				F816AB298E82D5C4A74A53BF /* Pods_Fter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +231,7 @@
 		47BF71A4000B359A612A47D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B5D78651F091B6700378A10 /* KakaoOpenSDK.framework */,
 				7B5D781A1F077D4300378A10 /* Photos.framework */,
 				0F9AE086120DE27A3AD151BE /* Pods_Fter.framework */,
 				18DBC4F0BFBEA3A30D01060A /* Pods_FterTests.framework */,
@@ -503,6 +510,7 @@
 			children = (
 				7B81703B1EFFAA5A00489D2C /* LoginVC.swift */,
 				7BF69D171F0622820018E09F /* FBLoginNetwork.swift */,
+				7B5D78681F0955E400378A10 /* KakaoLoginNetwork.swift */,
 				7BF69D151F0614F80018E09F /* LauchNetWork.swift */,
 			);
 			name = Login;
@@ -607,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8C28CE1EFEA7C500E5ECF7 /* AppDelegate.swift */,
+				7B5D78671F09201000378A10 /* Bridging_Header.h */,
 				7B81704F1EFFCC3000489D2C /* Core */,
 				7B81704A1EFFADB100489D2C /* DefaultNetwork */,
 				7B8170471EFFAD9600489D2C /* DefaultUI */,
@@ -1001,6 +1010,7 @@
 				7BFF6B7E1F074B6D00DB287F /* PartPickerDelegate.swift in Sources */,
 				7B0120BC1F0302AE00E9B28F /* CardVC.swift in Sources */,
 				7B5B58031F00A92600944004 /* TimeLineVO.swift in Sources */,
+				7B5D78691F0955E400378A10 /* KakaoLoginNetwork.swift in Sources */,
 				7B61DCAB1F01F508007C7E55 /* TimeLineExtension.swift in Sources */,
 				7B8170431EFFAC5200489D2C /* NavigationAtt.swift in Sources */,
 				7B0120BA1F03019100E9B28F /* AdvertisingDelegate.swift in Sources */,
@@ -1194,10 +1204,37 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SB46A3BWSY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Bridging_Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1208,10 +1245,37 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SB46A3BWSY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Fter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Bridging_Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

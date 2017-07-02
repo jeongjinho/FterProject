@@ -22,27 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlF-N2-Kgg">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Vb-lP-Lik">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sif-VK-8mg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="mpT-MY-P1G">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="light"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
-                        </subviews>
-                    </view>
-                    <blurEffect style="light"/>
-                </visualEffectView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4G-lg-kuN">
                     <rect key="frame" x="40" y="125.5" width="240" height="317"/>
                     <subviews>
@@ -106,16 +85,12 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39988227739726029" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="TlF-N2-Kgg" secondAttribute="trailing" id="C3W-iP-mkv"/>
-                <constraint firstAttribute="bottom" secondItem="TlF-N2-Kgg" secondAttribute="bottom" id="ESQ-Aw-YWp"/>
-                <constraint firstItem="TlF-N2-Kgg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FG5-oK-hYG"/>
                 <constraint firstItem="w4G-lg-kuN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="GDl-Ww-dla"/>
                 <constraint firstItem="w4G-lg-kuN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Q0m-sj-v2j"/>
                 <constraint firstItem="w4G-lg-kuN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ToW-eA-HiV"/>
                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="w4G-lg-kuN" secondAttribute="trailing" constant="40" id="VXc-bA-dMJ"/>
-                <constraint firstItem="TlF-N2-Kgg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w9K-Yl-umd"/>
             </constraints>
             <point key="canvasLocation" x="30" y="-103"/>
         </view>

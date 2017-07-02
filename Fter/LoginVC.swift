@@ -16,8 +16,12 @@ class LoginVC: UIViewController,NetworkingCallBack {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-       
         
+        
+            guard let storedID = UserDefaults.standard.string(forKey: "ID")  else { return  }
+//        
+//
+        LoginNetworkModel(self).getUserLoginInfo(id:storedID)
         self.navigationController?.navigationBar.isHidden = true
         initialButton()
         initialNaViBar()
@@ -52,10 +56,21 @@ class LoginVC: UIViewController,NetworkingCallBack {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func loginKakaoTalk(_ sender: UIButton) {
+        let kakaoID = KakaoLoginNetworkModel(vc: self).getUserIdForKaKao { (ID) in
+          self.id = ID
+             LoginNetworkModel(self).getUserLoginInfo(id: ID)
+        }
+        
+        
+    
+    
+    }
     @IBAction func loginFacebook(_ sender: UIButton){
         
           FBLoginNetwork(vc: self).callFaceBook { (data) -> Void in
             print(data)
+            self.id = data
             LoginNetworkModel(self).getUserLoginInfo(id: data)
             
         }
@@ -63,19 +78,24 @@ class LoginVC: UIViewController,NetworkingCallBack {
     }
         func networkFailed() {
         
-        
+        print("실패")
+            
         
     }
     
     func networkResult(resultData: Any, code: String) {
         loginFlag = resultData as! String
         if(loginFlag == "new"){
-            UserDefaults.standard.setValue(self.id, forKey:"ID")
+            print(self.id)
+            UserDefaults.standard.set(self.id, forKey: "ID")
+            
+            Utility().myLog(object:  UserDefaults.standard.string(forKey: "ID"))
         let profileVC = self.storyboard?.instantiateViewController(withIdentifier:"ProfileVC") as! ProfileVC
         self.navigationController?.pushViewController(profileVC, animated: true)
         
         } else if(loginFlag == "old"){
-              UserDefaults.standard.setValue(self.id, forKey:"ID")
+                UserDefaults.standard.set(self.id, forKey: "ID")
+               Utility().myLog(object:  UserDefaults.standard.string(forKey: "ID"))
             let timeLineVC = self.storyboard?.instantiateViewController(withIdentifier:"MainTimeLineVC") as! MainTimeLineVC
             self.present(timeLineVC.navigationController!, animated: true, completion: nil)
         

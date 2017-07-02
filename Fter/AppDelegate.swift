@@ -46,28 +46,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
         
     }
 
-    
+    func application(_ app: UIApplication, open url: URL, options: [String : AnyObject] = [:]) -> Bool {
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        return true
+    }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        
+        
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url as URL!, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
     
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        return false
+    }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
             
-         getId = UserDefaults.standard.object(forKey:"ID") as! String 
+       //  getId = UserDefaults.standard.object(forKey:"ID") as! String
        // self.window = UIWindow(frame: UIScreen.main.bounds)
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
       
-        if( UserDefaults.standard.object(forKey:"ID") != nil){
-            getId = UserDefaults.standard.object(forKey:"ID") as! String
-            
-        }
-        print(getId)
+//        if( UserDefaults.standard.object(forKey:"ID") != nil){
+//            getId = UserDefaults.standard.object(forKey:"ID") as! String
+//            
+//        }
+//        print(getId)
         
      //   LoginNetworkModel(self).getUserLoginInfo(id:getId)
         return true
         
     }
+    
+    
    
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -86,6 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,NetworkingCallBack {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+           KOSession.handleDidBecomeActive()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

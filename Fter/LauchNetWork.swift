@@ -67,7 +67,7 @@ class LoginModel:Mappable{
 class LoginNetworkModel : LauchNetworking{
 
     func getUserLoginInfo(id: String){
-        
+        print("아이디값" + id)
         let URL : String = "\(baseURL)"
 
         let body : [String:String] = [

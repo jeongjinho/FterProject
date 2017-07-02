@@ -25,7 +25,7 @@ class FBLoginNetwork: NSObject{
      var completeHandler: ((String) -> Void )?
 
     var vc: LoginVC?
-    var id:  String = ""
+    var id:  String?
 
      init(vc:LoginVC) {
         self.vc = vc
@@ -57,7 +57,7 @@ class FBLoginNetwork: NSObject{
                 let fbDetails = result as! [String:String]
                     
                     self.id = fbDetails["id"]!
-                       self.completeHandler?(self.id)
+                       self.completeHandler?(self.id!)
                 }
             })
             
@@ -103,7 +103,7 @@ extension FBLoginNetwork {
                     let fbDetails = result as! [String:String]
                     
                     self.id = fbDetails["id"]!
-                    self.completeHandler?(self.id)
+                    self.completeHandler?(self.id!)
                 }
             })
             
